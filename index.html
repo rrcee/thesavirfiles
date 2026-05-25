@@ -7,80 +7,83 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Design Tokens — Colors */
-      --color-night-sky: #1f1f29;
-      --color-cofounder-blue: #0081c0;
-      --color-action-azure: #41a1cf;
-      --color-pitch-black: #000000;
-      --color-canvas-white: #ffffff;
-      --color-slate-gray: #4a4a5a;
-      --color-mist-gray: #f4f5f8;
-      --color-border-subtle: rgba(0, 0, 0, 0.06);
+      /* Colors */
+      --color-midnight-abyss: #141414;
+      --color-ghost-white: #fdf9f0;
+      --color-lime-squeeze: #c7ff69;
+      --color-amethyst-glow: #7a78ff;
+      --color-sunset-orange: #ff6d38;
+      --color-emerald-sprint: #00a652;
+      --color-skybound-blue: #478bff;
+      --color-golden-rod: #ffc412;
+      --color-lavender-mist: #ccccff;
 
       /* Typography — Font Families */
-      --font-serif: 'Fraunces', Georgia, serif;
-      --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --font-aeonik: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --font-oldschoolgrotesk: 'Bebas Neue', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-      /* Typography — Scale & Hierarchy */
-      --text-caption: 13px;
-      --leading-caption: 1.5;
-      --tracking-caption: -0.13px;
+      /* Typography — Scale & Precise Letter Spacing */
+      --text-caption: 11px;
+      --leading-caption: 0.85;
+      --tracking-caption: 0.165px;
 
-      --text-body: 15px;
-      --leading-body: 1.6;
-      --tracking-body: -0.15px;
-
-      --text-button-label: 16px;
-      --leading-button-label: 1;
-      --tracking-button-label: -0.19px;
+      --text-body: 14px;
+      --leading-body: 1;
+      --tracking-body: 0.14px;
 
       --text-subheading: 18px;
       --leading-subheading: 1.2;
-      --tracking-subheading: -0.18px;
+      --tracking-subheading: -0.36px;
 
-      --text-heading: 40px;
-      --leading-heading: 1.1;
-      --tracking-heading: -0.8px;
+      --text-heading: 22px;
+      --leading-heading: 0.8;
+      --tracking-heading: -0.44px;
 
-      --text-heading-lg: 48px;
-      --leading-heading-lg: 1.1;
-      --tracking-heading-lg: -0.96px;
+      --text-heading-lg: 36px;
+      --leading-heading-lg: 0.9;
+      --tracking-heading-lg: -0.72px;
 
-      --text-display: 54px;
-      --leading-display: 1.1;
-      --tracking-display: -1.08px;
+      --text-display: 84px; /* Scaled cleanly for web viewing while keeping the dense compression metrics */
+      --leading-display: 0.8;
+      --tracking-display: -3.5px;
 
       /* Spacing Scale */
-      --spacing-4: 4px;
-      --spacing-8: 8px;
-      --spacing-12: 12px;
-      --spacing-16: 16px;
-      --spacing-20: 20px;
-      --spacing-24: 24px;
-      --spacing-32: 32px;
-      --spacing-40: 40px;
-      --spacing-64: 64px;
-      --spacing-80: 80px;
-      --spacing-100: 100px;
+      --spacing-6: 6px;
+      --spacing-7: 7px;
+      --spacing-9: 9px;
+      --spacing-14: 14px;
+      --spacing-18: 18px;
+      --spacing-21: 21px;
+      --spacing-22: 22px;
+      --spacing-23: 23px;
+      --spacing-26: 26px;
+      --spacing-27: 27px;
+      --spacing-28: 28px;
+      --spacing-29: 29px;
+      --spacing-36: 36px;
+      --spacing-41: 41px;
+      --spacing-66: 66px;
+      --spacing-72: 72px;
 
-      /* Border Radii */
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 16px;
-      --radius-xl: 24px;
-      --radius-full: 9999px;
+      /* Layout Matrix definitions */
+      --section-gap: 27px;
+      --card-padding: 26px;
+      --element-gap: 18px;
 
-      /* Architectural Elevation Shadows */
-      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
-      --shadow-nav: 0 2px 16px rgba(31, 31, 41, 0.03);
-      --shadow-lightbox: 0 20px 50px rgba(0, 0, 0, 0.15);
+      /* Strict Border Radii Architecture */
+      --radius-tags: 1000px;
+      --radius-cards: 43.2px;
+      --radius-links: 20.7px;
+      --radius-buttons: 25.146px;
+      --radius-accordion: 64.8px;
+      --radius-asymmetric: 82.2857px / 57.6px;
     }
 
-    /* Base Reset & Architecture Layout */
+    /* Base Reset Framework */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -89,15 +92,16 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: var(--color-canvas-white);
+      background-color: var(--color-midnight-abyss);
     }
 
     body {
-      font-family: var(--font-sans);
+      font-family: var(--font-aeonik);
       font-size: var(--text-body);
       line-height: var(--leading-body);
       letter-spacing: var(--tracking-body);
-      color: var(--color-slate-gray);
+      color: var(--color-ghost-white);
+      background-color: var(--color-midnight-abyss);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -105,26 +109,23 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Grid Layout Container */
+    /* Layout Containers */
     .container {
       width: 100%;
       max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: var(--spacing-24);
-      padding-right: var(--spacing-24);
+      margin: 0 auto;
+      padding: 0 var(--spacing-26);
     }
 
-    /* Transparent Modern Navigation Header */
+    /* Sticky Dark Navigation Architecture */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--color-border-subtle);
-      box-shadow: var(--shadow-nav);
+      background: rgba(20, 20, 20, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1.5px solid rgba(253, 249, 240, 0.1);
     }
 
     .navbar {
@@ -135,483 +136,400 @@
     }
 
     .brand {
-      font-family: var(--font-serif);
-      font-size: var(--text-subheading);
-      letter-spacing: var(--tracking-subheading);
-      font-weight: 500;
-      color: var(--color-pitch-black);
+      font-family: var(--font-oldschoolgrotesk);
+      font-size: var(--text-heading);
+      letter-spacing: var(--tracking-heading);
+      color: var(--color-ghost-white);
       text-decoration: none;
+      font-weight: 900;
+      text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
-      gap: var(--spacing-32);
+      gap: var(--spacing-27);
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
-      font-size: var(--text-caption);
-      letter-spacing: var(--tracking-caption);
-      color: var(--color-slate-gray);
+      font-size: var(--text-body);
+      letter-spacing: var(--tracking-body);
+      color: var(--color-ghost-white);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.25s ease;
+      transition: color 0.2s ease;
+      padding: var(--spacing-6) 0;
     }
 
     .nav-links a:hover {
-      color: var(--color-cofounder-blue);
+      color: var(--color-lime-squeeze);
     }
 
-    /* Dramatic, Architectural Hero Section (Night Sky Accent Theme) */
-    .hero-section {
-      background-color: var(--color-night-sky);
-      color: var(--color-canvas-white);
-      padding-top: var(--spacing-100);
-      padding-bottom: var(--spacing-100);
+    /* High-Contrast Centered Hero Canvas */
+    .hero {
       text-align: center;
+      padding: var(--spacing-72) 0;
+      border-bottom: 1.5px solid rgba(253, 249, 240, 0.1);
       position: relative;
-      overflow: hidden;
-    }
-
-    /* Ethereal background accent graphic treatment */
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -20%;
-      width: 140%;
-      height: 200%;
-      background: radial-gradient(circle at 50% 30%, rgba(0, 129, 192, 0.12) 0%, rgba(31, 31, 41, 0) 60%);
-      pointer-events: none;
     }
 
     .hero-title {
-      font-family: var(--font-serif);
+      font-family: var(--font-oldschoolgrotesk);
+      font-weight: 900;
+      text-transform: uppercase;
       font-size: var(--text-display);
       line-height: var(--leading-display);
       letter-spacing: var(--tracking-display);
-      color: var(--color-canvas-white);
-      font-weight: 400;
-      margin-bottom: var(--spacing-24);
-      animation: titleReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      color: var(--color-lime-squeeze);
+      margin-bottom: var(--spacing-18);
     }
 
     .hero-subtitle {
       font-size: var(--text-subheading);
-      line-height: 1.5;
+      line-height: var(--leading-subheading);
       letter-spacing: var(--tracking-subheading);
-      color: rgba(255, 255, 255, 0.75);
+      color: var(--color-ghost-white);
       max-width: 680px;
-      margin: 0 auto var(--spacing-40) auto;
-      font-weight: 400;
+      margin: 0 auto var(--spacing-27) auto;
     }
 
-    .verification-banner {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: var(--spacing-16) var(--spacing-24);
-      border-radius: var(--radius-md);
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: var(--text-caption);
-      line-height: var(--leading-caption);
-      letter-spacing: var(--tracking-caption);
-      color: rgba(255, 255, 255, 0.65);
+    .hero-verification-notice {
+      background: rgba(253, 249, 240, 0.05);
+      border: 1.5px solid rgba(253, 249, 240, 0.15);
+      padding: var(--spacing-14) var(--spacing-22);
+      border-radius: var(--radius-buttons);
+      max-width: 580px;
+      margin: var(--spacing-26) auto 0 auto;
+      font-size: var(--text-body);
+      color: var(--color-ghost-white);
     }
 
-    /* Custom Buttons matching precise guidelines */
+    /* Core Action Button Elements */
     .btn {
-      font-family: var(--font-sans);
-      font-size: var(--text-button-label);
-      line-height: var(--leading-button-label);
-      letter-spacing: var(--tracking-button-label);
-      font-weight: 500;
-      padding: var(--spacing-16) var(--spacing-32);
-      border-radius: var(--radius-sm);
+      font-family: var(--font-aeonik);
+      font-size: var(--text-body);
+      letter-spacing: var(--tracking-body);
+      font-weight: 700;
+      height: 44px;
+      padding: 8px 25.848px;
+      border-radius: var(--radius-buttons);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
       cursor: pointer;
     }
 
     .btn-primary {
-      background-color: var(--color-cofounder-blue);
-      color: var(--color-canvas-white);
+      background-color: var(--color-lime-squeeze);
+      color: var(--color-midnight-abyss);
       border: none;
     }
 
     .btn-primary:hover {
-      background-color: #0093da;
-      transform: translateY(-1px);
+      transform: scale(1.02);
+      background-color: #b3ef4c;
     }
 
-    /* Section Architecture Typography */
-    .section-padding {
-      padding-top: var(--spacing-100);
-      padding-bottom: var(--spacing-100);
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto var(--spacing-64) auto;
+    /* System Grid Content Blocks */
+    .section-block {
+      padding: var(--spacing-66) 0;
     }
 
     .section-title {
-      font-family: var(--font-serif);
+      font-family: var(--font-oldschoolgrotesk);
       font-size: var(--text-heading-lg);
       line-height: var(--leading-heading-lg);
       letter-spacing: var(--tracking-heading-lg);
-      color: var(--color-pitch-black);
-      font-weight: 400;
-      margin-bottom: var(--spacing-12);
-    }
-
-    .section-tagline {
-      font-size: var(--text-caption);
-      letter-spacing: var(--tracking-caption);
-      color: var(--color-slate-gray);
+      color: var(--color-ghost-white);
+      font-weight: 900;
       text-transform: uppercase;
-      font-weight: 600;
+      margin-bottom: var(--section-gap);
     }
 
-    /* Advanced Forensic Layout Cards Grid */
     .evidence-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: var(--spacing-40);
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--section-gap);
     }
 
+    /* Solid Accent-Colored Cards Architecture */
     .evidence-card {
-      background-color: var(--color-canvas-white);
-      border: 1px solid var(--color-border-subtle);
-      border-radius: var(--radius-lg);
-      padding: var(--spacing-24);
-      box-shadow: var(--shadow-card);
+      background-color: var(--color-lavender-mist);
+      color: var(--color-midnight-abyss);
+      border-radius: var(--radius-cards);
+      padding: var(--card-padding);
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      gap: var(--element-gap);
     }
 
-    .evidence-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
+    /* Explicitly alternating solid accent colors */
+    .evidence-card:nth-child(2) {
+      background-color: var(--color-amethyst-glow);
+      color: var(--color-ghost-white);
     }
 
-    /* Preserves original asset ratios layout criteria perfectly (9:16 Preferential Dimension Block) */
-    .image-container-wrapper {
+    .evidence-card:nth-child(3) {
+      background-color: var(--color-emerald-sprint);
+      color: var(--color-ghost-white);
+    }
+
+    .evidence-card .card-meta-title {
+      font-family: var(--font-oldschoolgrotesk);
+      font-size: var(--text-heading);
+      line-height: var(--leading-heading);
+      letter-spacing: var(--tracking-heading);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    /* Aspect-Ratio Protected 9:16 Media Framework */
+    .evidence-frame {
       width: 100%;
       aspect-ratio: 9 / 16;
-      background-color: var(--color-mist-gray);
-      border-radius: var(--radius-md);
+      background-color: var(--color-midnight-abyss);
+      border-radius: var(--radius-buttons);
       overflow: hidden;
       position: relative;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: var(--spacing-24);
-      border: 1px solid rgba(0, 0, 0, 0.03);
+      border: 1.5px solid rgba(20, 20, 20, 0.15);
     }
 
-    .image-container-wrapper img {
+    .evidence-frame img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Ensures screenshots are never manipulated, cropped, or warped */
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      object-fit: contain; /* Never stretch, warp, or distort critical evidence screenshots */
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .image-container-wrapper:hover img {
+    .evidence-frame:hover img {
       transform: scale(1.03);
     }
 
-    .expand-indicator {
+    .expand-tag {
       position: absolute;
-      bottom: var(--spacing-12);
-      right: var(--spacing-12);
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: var(--spacing-4) var(--spacing-12);
-      border-radius: var(--radius-full);
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--color-pitch-black);
+      bottom: var(--spacing-14);
+      right: var(--spacing-14);
+      background-color: var(--color-lime-squeeze);
+      color: var(--color-midnight-abyss);
+      padding: var(--spacing-6) var(--spacing-14);
+      border-radius: var(--radius-tags);
+      font-size: var(--text-caption);
+      font-weight: 700;
+      text-transform: uppercase;
       pointer-events: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
-    .card-meta-title {
-      font-family: var(--font-serif);
-      font-size: var(--text-subheading);
-      letter-spacing: var(--tracking-subheading);
-      color: var(--color-pitch-black);
-      font-weight: 500;
-      margin-bottom: var(--spacing-16);
-    }
-
-    /* Structured Technical Verification Points List */
-    .analysis-points {
+    /* Styled Audit List Units */
+    .analysis-list {
       list-style-type: none;
       display: flex;
       flex-direction: column;
-      gap: var(--spacing-12);
+      gap: var(--spacing-9);
     }
 
-    .analysis-points li {
+    .analysis-list li {
       position: relative;
-      padding-left: var(--spacing-20);
+      padding-left: var(--spacing-18);
       font-size: var(--text-body);
-      line-height: var(--leading-body);
-      color: var(--color-slate-gray);
+      line-height: 1.2;
     }
 
-    .analysis-points li::before {
-      content: "";
+    .analysis-list li::before {
+      content: "•";
       position: absolute;
       left: 0;
-      top: 10px;
-      width: 6px;
-      height: 1px;
-      background-color: var(--color-action-azure);
+      font-weight: bold;
     }
 
-    /* Layered General Summary Panel Alignment */
-    .summary-panel {
-      background-color: var(--color-mist-gray);
-      border-radius: var(--radius-xl);
-      padding: var(--spacing-40);
-      margin-top: var(--spacing-64);
-      border: 1px solid var(--color-border-subtle);
+    /* Contrasting FAQ-style Summary Card */
+    .summary-accordion-card {
+      background-color: var(--color-ghost-white);
+      color: var(--color-midnight-abyss);
+      border-radius: var(--radius-accordion);
+      padding: 55.8px 65.7px 66px 65.7px; /* Structured internal padding system */
+      margin-top: var(--spacing-41);
     }
 
-    .summary-panel-title {
-      font-family: var(--font-serif);
-      font-size: var(--text-subheading);
-      letter-spacing: var(--tracking-subheading);
-      color: var(--color-pitch-black);
-      font-weight: 500;
-      margin-bottom: var(--spacing-24);
+    .summary-accordion-card .summary-title {
+      font-family: var(--font-oldschoolgrotesk);
+      font-size: var(--text-heading);
+      line-height: var(--leading-heading);
+      letter-spacing: var(--tracking-heading);
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-18);
+      border-bottom: 1.5px solid var(--color-midnight-abyss);
+      padding-bottom: var(--spacing-7);
     }
 
-    .summary-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: var(--spacing-32);
+    .summary-rows {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-18);
     }
 
-    .summary-col {
-      font-size: var(--text-caption);
-      line-height: var(--leading-body);
-      letter-spacing: var(--tracking-caption);
-      color: var(--color-slate-gray);
+    .summary-row-item {
+      font-size: var(--text-body);
+      line-height: 1.3;
     }
 
-    .summary-col strong {
-      color: var(--color-pitch-black);
-      display: block;
-      margin-bottom: var(--spacing-4);
-      font-weight: 600;
-    }
-
-    /* Architectural Vertical Timeline Component */
-    .timeline-wrapper {
-      max-width: 740px;
-      margin: 0 auto;
+    /* Vertical Timeline Progression Frame */
+    .timeline-axis {
+      max-width: 640px;
+      margin-top: var(--spacing-27);
       position: relative;
-      padding: var(--spacing-24) 0;
-    }
-
-    .timeline-wrapper::before {
-      content: '';
-      position: absolute;
-      left: 24px;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background-color: var(--color-border-subtle);
     }
 
     .timeline-node {
       position: relative;
-      padding-left: 64px;
-      margin-bottom: var(--spacing-40);
+      padding-left: var(--spacing-41);
+      margin-bottom: var(--spacing-26);
     }
 
     .timeline-node:last-child {
       margin-bottom: 0;
     }
 
-    .timeline-axis-point {
+    .timeline-node-pill {
       position: absolute;
-      left: 20px;
-      top: 6px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background-color: var(--color-canvas-white);
-      border: 2px solid var(--color-cofounder-blue);
-      z-index: 5;
+      left: 0;
+      top: 2px;
+      width: var(--spacing-14);
+      height: var(--spacing-14);
+      background-color: var(--color-lime-squeeze);
+      border-radius: var(--radius-tags);
     }
 
     .timeline-node-title {
-      font-family: var(--font-sans);
-      font-size: var(--text-body);
-      font-weight: 600;
-      color: var(--color-pitch-black);
-      margin-bottom: var(--spacing-4);
-    }
-
-    .timeline-node-desc {
-      font-size: var(--text-caption);
-      line-height: var(--leading-caption);
-      letter-spacing: var(--tracking-caption);
-      color: var(--color-slate-gray);
-    }
-
-    /* Minimal Elegant Quote and Respect Container Frame */
-    .fairness-card-bubble {
-      background-color: var(--color-canvas-white);
-      border: 1px solid var(--color-border-subtle);
-      border-radius: var(--radius-xl);
-      padding: var(--spacing-64) var(--spacing-40);
-      text-align: center;
-      max-width: 840px;
-      margin: 0 auto;
-      box-shadow: var(--shadow-card);
-    }
-
-    .fairness-card-bubble p {
-      font-size: var(--text-subheading);
-      line-height: 1.5;
-      letter-spacing: var(--tracking-subheading);
-      color: var(--color-slate-gray);
-      max-width: 640px;
-      margin: 0 auto var(--spacing-32) auto;
-    }
-
-    .investigative-quote {
-      font-family: var(--font-serif);
+      font-family: var(--font-oldschoolgrotesk);
       font-size: var(--text-heading);
-      line-height: var(--leading-heading);
       letter-spacing: var(--tracking-heading);
-      color: var(--color-cofounder-blue);
-      font-style: italic;
-      font-weight: 400;
+      text-transform: uppercase;
+      color: var(--color-lime-squeeze);
+      margin-bottom: var(--spacing-6);
+    }
+
+    /* Asymmetric Interactive Graphic Component */
+    .graphic-badge-box {
+      width: 56px;
+      height: 56px;
+      background-color: var(--color-emerald-sprint);
+      border-radius: var(--radius-asymmetric);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--spacing-18) auto;
+    }
+
+    /* Bubble Quote Realization Frame */
+    .fairness-bubble {
+      background-color: var(--color-ghost-white);
+      color: var(--color-midnight-abyss);
+      border-radius: var(--radius-cards);
+      padding: var(--spacing-41);
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .quote-block-text {
+      font-family: var(--font-oldschoolgrotesk);
+      font-size: var(--text-heading-lg);
+      line-height: var(--leading-heading-lg);
+      letter-spacing: var(--tracking-heading-lg);
+      color: var(--color-sunset-orange);
+      text-transform: uppercase;
+      margin-top: var(--spacing-18);
       display: block;
     }
 
-    /* Modern Structured Footer */
+    /* Modern Flat Footer Alignment */
     footer {
-      background-color: var(--color-mist-gray);
-      border-top: 1px solid var(--color-border-subtle);
-      padding-top: var(--spacing-64);
-      padding-bottom: var(--spacing-64);
+      background-color: var(--color-midnight-abyss);
+      border-top: 1.5px solid rgba(253, 249, 240, 0.1);
+      padding: var(--spacing-41) 0;
       text-align: center;
     }
 
     footer p {
-      font-family: var(--font-serif);
-      font-size: var(--text-subheading);
-      letter-spacing: var(--tracking-subheading);
-      color: var(--color-pitch-black);
-      margin-bottom: var(--spacing-8);
+      font-family: var(--font-oldschoolgrotesk);
+      font-size: var(--text-heading);
+      letter-spacing: var(--tracking-heading);
+      text-transform: uppercase;
+      color: var(--color-lime-squeeze);
+      margin-bottom: var(--spacing-7);
     }
 
     footer span {
       font-size: var(--text-caption);
       letter-spacing: var(--tracking-caption);
-      color: var(--color-slate-gray);
-      display: block;
-      max-width: 500px;
-      margin: 0 auto;
+      color: var(--color-ghost-white);
+      opacity: 0.7;
     }
 
-    /* Precision Lightbox Framework System */
-    .lightbox-overlay {
+    /* Pure Color-Block Lightbox Overlay (No Shadows) */
+    .lightbox-window {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(31, 31, 41, 0.96);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background-color: var(--color-midnight-abyss);
       display: none;
       justify-content: center;
       align-items: center;
       z-index: 1000;
-      opacity: 0;
-      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      padding: var(--spacing-32);
+      padding: var(--spacing-26);
     }
 
-    .lightbox-overlay.active {
+    .lightbox-window.active {
       display: flex;
-      opacity: 1;
     }
 
-    .lightbox-image-render {
-      max-width: 90%;
+    .lightbox-rendering {
+      max-width: 95%;
       max-height: 85vh;
       object-fit: contain;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-lightbox);
-      transform: scale(0.96);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1.5px solid var(--color-ghost-white);
+      border-radius: var(--radius-buttons);
     }
 
-    .lightbox-overlay.active .lightbox-image-render {
-      transform: scale(1);
-    }
-
-    .lightbox-close-action {
+    .lightbox-dismiss {
       position: absolute;
-      top: var(--spacing-24);
-      right: var(--spacing-24);
+      top: var(--spacing-26);
+      right: var(--spacing-26);
+      background-color: var(--color-lime-squeeze);
+      color: var(--color-midnight-abyss);
+      border: none;
       width: 44px;
       height: 44px;
-      border-radius: var(--radius-full);
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-tags);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 24px;
-      color: var(--color-canvas-white);
-      transition: background 0.25s ease;
+      font-weight: bold;
     }
 
-    .lightbox-close-action:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    /* Core Micro-Animation Keys */
-    @keyframes titleReveal {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive Viewport Rules Layout Overrides */
+    /* Responsive Constraints Configuration */
     @media (max-width: 768px) {
       :root {
-        --text-display: 40px;
-        --text-heading-lg: 34px;
-        --text-heading: 28px;
+        --text-display: 54px;
+        --text-heading-lg: 28px;
       }
       .nav-links {
         display: none;
       }
-      .hero-section {
-        padding-top: var(--spacing-64);
-        padding-bottom: var(--spacing-64);
-      }
-      .fairness-card-bubble {
-        padding: var(--spacing-40) var(--spacing-24);
+      .summary-accordion-card {
+        padding: var(--spacing-26);
       }
     }
   </style>
@@ -622,40 +540,38 @@
     <div class="container navbar">
       <a href="#" class="brand">The Truth About Savir</a>
       <ul class="nav-links">
-        <li><a href="#analysis-section">Evidence Audit</a></li>
+        <li><a href="#audit-section">Evidence Analysis</a></li>
         <li><a href="#timeline-section">Investigation Timeline</a></li>
-        <li><a href="#ethical-section">Statement of Fairness</a></li>
+        <li><a href="#respect-section">Statement of Fairness</a></li>
       </ul>
     </div>
   </header>
 
   <main>
-    
-    <section class="hero-section">
-      <div class="container">
-        <h1 class="hero-title">Savir Is Innocent</h1>
-        <p class="hero-subtitle">Anonymous screenshots were spread online without proper verification. Evidence analysis raises serious doubts about their authenticity.</p>
-        <div class="verification-banner">
-          Please verify information metrics independently before distributing public claims or community accusations. Critical analysis preserves fairness.
-        </div>
+
+    <section class="hero container">
+      <h1 class="hero-title">Savir Is Innocent</h1>
+      <p class="hero-subtitle">Anonymous screenshots were spread online without proper verification. Evidence analysis raises serious doubts about their authenticity.</p>
+      <div>
+        <a href="#audit-section" class="btn btn-primary">Examine Forensic Audit</a>
+      </div>
+      <div class="hero-verification-notice">
+        Encouraging community users to systematically verify information before distributing public accusations.
       </div>
     </section>
 
-    <section class="section-padding container" id="analysis-section">
-      <div class="section-header">
-        <span class="section-tagline">Forensic Analysis</span>
-        <h2 class="section-title">Evidence & Verification</h2>
-      </div>
-
+    <section class="section-block container" id="audit-section">
+      <h2 class="section-title">Evidence Analysis</h2>
+      
       <div class="evidence-grid">
-        
+
         <div class="evidence-card">
-          <div class="image-container-wrapper" onclick="executeLightboxView('image1.jpeg')">
-            <img src="image1.jpeg" alt="Forensic Screenshot Analysis 1">
-            <div class="expand-indicator">Expand View</div>
+          <div class="evidence-frame" onclick="openInspectorLightbox('image1.jpeg')">
+            <img src="image1.jpeg" alt="Screenshot Audit Element 1">
+            <div class="expand-tag">Inspect</div>
           </div>
           <h3 class="card-meta-title">Image 1 Analysis</h3>
-          <ul class="analysis-points">
+          <ul class="analysis-list">
             <li>The screenshot claims to represent an iOS environment.</li>
             <li>A visible mouse cursor appears inside the screenshot, which is inconsistent with normal iPhone screenshots.</li>
             <li>Windows Snipping Tool does not automatically insert mouse cursors into screenshots.</li>
@@ -665,12 +581,12 @@
         </div>
 
         <div class="evidence-card">
-          <div class="image-container-wrapper" onclick="executeLightboxView('image 2.jpeg')">
-            <img src="image 2.jpeg" alt="Forensic Screenshot Analysis 2">
-            <div class="expand-indicator">Expand View</div>
+          <div class="evidence-frame" onclick="openInspectorLightbox('image 2.jpeg')">
+            <img src="image 2.jpeg" alt="Screenshot Audit Element 2">
+            <div class="expand-tag">Inspect</div>
           </div>
           <h3 class="card-meta-title">Image 2 Analysis</h3>
-          <ul class="analysis-points">
+          <ul class="analysis-list">
             <li>AI analysis flagged the image as digitally edited.</li>
             <li>Compression artifacts and inconsistent rendering reduce authenticity.</li>
             <li>Visual inconsistencies suggest possible manipulation.</li>
@@ -678,12 +594,12 @@
         </div>
 
         <div class="evidence-card">
-          <div class="image-container-wrapper" onclick="executeLightboxView('image 3.jpeg')">
-            <img src="image 3.jpeg" alt="Forensic Screenshot Analysis 3">
-            <div class="expand-indicator">Expand View</div>
+          <div class="evidence-frame" onclick="openInspectorLightbox('image 3.jpeg')">
+            <img src="image 3.jpeg" alt="Screenshot Audit Element 3">
+            <div class="expand-tag">Inspect</div>
           </div>
           <h3 class="card-meta-title">Image 3 Analysis</h3>
-          <ul class="analysis-points">
+          <ul class="analysis-list">
             <li>AI analysis detected signs of digital editing/manipulation.</li>
             <li>Heavy quality degradation raises authenticity concerns.</li>
             <li>Distorted visual details suggest the image may not be original.</li>
@@ -692,64 +608,59 @@
 
       </div>
 
-      <div class="summary-panel">
-        <h3 class="summary-panel-title">General Evidence Summary</h3>
-        <div class="summary-columns">
-          <div class="summary-col">
-            <strong>Resolution Discrepancy</strong>
-            Modern smartphones, especially iPhones, normally produce high-resolution screenshots. Extremely low-quality screenshots can hide editing traces.
+      <div class="summary-accordion-card">
+        <h3 class="summary-title">General Evidence Summary</h3>
+        <div class="summary-rows">
+          <div class="summary-row-item">
+            • Modern smartphones, especially iPhones, normally produce high-resolution screenshots. Extremely low-quality screenshots can hide editing traces.
           </div>
-          <div class="summary-col">
-            <strong>Unverifiable Attribution</strong>
-            Anonymous uploads without verifiable sources should not automatically be treated as factual evidence or objective reality.
+          <div class="summary-row-item">
+            • Anonymous uploads without verifiable sources should not automatically be treated as factual evidence.
           </div>
-          <div class="summary-col">
-            <strong>Inconsistency Detection</strong>
-            Multiple structural inconsistencies across the screenshots raise serious doubts regarding authenticity. AI analysis tools identified likely manipulation in multiple images.
+          <div class="summary-row-item">
+            • Multiple inconsistencies across the screenshots raise serious doubts regarding authenticity. AI analysis tools identified likely manipulation in multiple images.
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section-padding" id="timeline-section" style="background-color: var(--color-mist-gray); border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle);">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tagline">Log Logs</span>
-          <h2 class="section-title">Timeline of Events</h2>
+    <section class="section-block container" id="timeline-section" style="border-top: 1px solid rgba(253, 249, 240, 0.1);">
+      <h2 class="section-title">Timeline of Events</h2>
+      
+      <div class="timeline-axis">
+        <div class="timeline-node">
+          <div class="timeline-node-pill"></div>
+          <h4 class="timeline-node-title">Anonymous Uploads</h4>
+          <p>Anonymous screenshots appeared online.</p>
         </div>
-
-        <div class="timeline-wrapper">
-          <div class="timeline-node">
-            <div class="timeline-axis-point"></div>
-            <h4 class="timeline-node-title">Initial Event Allocation</h4>
-            <p class="timeline-node-desc">Anonymous screenshots appeared online without validation parameters or verified sources.</p>
-          </div>
-          
-          <div class="timeline-node">
-            <div class="timeline-axis-point"></div>
-            <h4 class="timeline-node-title">Rapid Amplification</h4>
-            <p class="timeline-node-desc">Accusations spread rapidly across community social spaces before proper evaluation took place.</p>
-          </div>
-          
-          <div class="timeline-node">
-            <div class="timeline-axis-point"></div>
-            <h4 class="timeline-node-title">Forensic Audit Allocation</h4>
-            <p class="timeline-node-desc">Evidence analysis later raised significant, repeatable concerns regarding metadata and authenticity parameters.</p>
-          </div>
-          
-          <div class="timeline-node">
-            <div class="timeline-axis-point"></div>
-            <h4 class="timeline-node-title">Technical Disclosure</h4>
-            <p class="timeline-node-desc">Discussions emerged regarding cursor inconsistencies, editing artifacts, and manipulated visuals.</p>
-          </div>
+        
+        <div class="timeline-node">
+          <div class="timeline-node-pill"></div>
+          <h4 class="timeline-node-title">Unverified Spread</h4>
+          <p>Accusations spread rapidly before verification.</p>
+        </div>
+        
+        <div class="timeline-node">
+          <div class="timeline-node-pill"></div>
+          <h4 class="timeline-node-title">Forensic Audit</h4>
+          <p>Evidence analysis later raised concerns about authenticity.</p>
+        </div>
+        
+        <div class="timeline-node">
+          <div class="timeline-node-pill"></div>
+          <h4 class="timeline-node-title">Public Disclosure</h4>
+          <p>Discussions emerged regarding cursor inconsistencies, editing artifacts, and manipulated visuals.</p>
         </div>
       </div>
     </section>
 
-    <section class="section-padding container" id="ethical-section">
-      <div class="fairness-card-bubble">
-        <p>Nobody should be bullied, harassed, or labeled guilty without verified proof. We encourage objective critical thinking, complete fairness, and responsible online behavior across all communicative channels.</p>
-        <span class="investigative-quote">“Facts matter more than rumors.”</span>
+    <section class="section-block container" id="respect-section" style="border-top: 1px solid rgba(253, 249, 240, 0.1);">
+      <div class="graphic-badge-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fdf9f0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      </div>
+      <div class="fairness-bubble">
+        <p>Nobody should be bullied, harassed, or labeled guilty without verified proof. We encourage critical thinking, fairness, and responsible online behavior.</p>
+        <span class="quote-block-text">“Facts matter more than rumors.”</span>
       </div>
     </section>
 
@@ -758,47 +669,35 @@
   <footer>
     <div class="container">
       <p>Seek facts before spreading accusations.</p>
-      <span>This website exists to present evidence analysis and encourage fair judgment. All claims are grounded in verifiable technical inconsistencies.</span>
+      <span>This website exists to present evidence analysis and encourage fair judgment. All insights are built strictly upon technical pixel and metadata inconsistencies.</span>
     </div>
   </footer>
 
-  <div id="forensicLightbox" class="lightbox-overlay" onclick="terminateLightboxWindow()">
-    <button class="lightbox-close-action" onclick="terminateLightboxWindow()">&times;</button>
-    <img id="lightboxRenderingTarget" class="lightbox-image-render" src="" alt="Analytical Artifact Extended Scale Panel">
+  <div id="inspectorLightbox" class="lightbox-window" onclick="closeInspectorLightboxWindow()">
+    <button class="lightbox-dismiss" onclick="closeInspectorLightboxWindow()">&times;</button>
+    <img id="lightboxTargetImage" class="lightbox-rendering" src="" alt="Analytical Artifact Detailed Scale Frame">
   </div>
 
   <script>
-    function executeLightboxView(assetSource) {
-      const modalWindow = document.getElementById('forensicLightbox');
-      const targetRenderImage = document.getElementById('lightboxRenderingTarget');
+    function openInspectorLightbox(imgUrl) {
+      const windowOverlay = document.getElementById('inspectorLightbox');
+      const renderTarget = document.getElementById('lightboxTargetImage');
       
-      targetRenderImage.src = assetSource;
-      modalWindow.style.display = 'flex';
-      
-      // Delay declaration handles clean transition animation scaling trigger
-      setTimeout(() => {
-        modalWindow.classList.add('active');
-      }, 10);
-      
-      document.body.style.overflow = 'hidden'; // Restrain background interaction layer scrolling
+      renderTarget.src = imgUrl;
+      windowOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Fast Scroll Freeze
     }
 
-    function terminateLightboxWindow() {
-      const modalWindow = document.getElementById('forensicLightbox');
-      modalWindow.classList.remove('active');
-      
-      // Matches CSS cubic-bezier transition time configuration parameters
-      setTimeout(() => {
-        modalWindow.style.display = 'none';
-      }, 300);
-      
-      document.body.style.overflow = ''; // Release parent environment scroll lock
+    function closeInspectorLightboxWindow() {
+      const windowOverlay = document.getElementById('inspectorLightbox');
+      windowOverlay.classList.remove('active');
+      document.body.style.overflow = ''; // Resume Scroll Flow
     }
 
-    // Intercept Escape key inputs for easy dismiss capability
-    document.addEventListener('keydown', function(inputEvent) {
-      if (inputEvent.key === 'Escape') {
-        terminateLightboxWindow();
+    // Capture Escape key sequences cleanly
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeInspectorLightboxWindow();
       }
     });
   </script>
