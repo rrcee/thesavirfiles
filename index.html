@@ -7,83 +7,91 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Colors */
-      --color-midnight-abyss: #141414;
-      --color-ghost-white: #fdf9f0;
-      --color-lime-squeeze: #c7ff69;
-      --color-amethyst-glow: #7a78ff;
-      --color-sunset-orange: #ff6d38;
-      --color-emerald-sprint: #00a652;
-      --color-skybound-blue: #478bff;
-      --color-golden-rod: #ffc412;
-      --color-lavender-mist: #ccccff;
+      /* Design Tokens — Colors */
+      --color-night-sky: #1f1f29;
+      --color-cofounder-blue: #0081c0;
+      --color-action-azure: #41a1cf;
+      --color-pitch-black: #000000;
+      --color-canvas-white: #ffffff;
+      --color-off-white: #fefffc;
+      --color-ash-gray: #f9faf7;
+      --color-cool-gray: #eef1ed;
+      --color-steel-gray: #dee2de;
+      --color-dark-charcoal: #171717;
+      --color-charcoal: #2c2c2c;
+      --color-rich-black: #282834;
+      --color-slate-gray: #444141;
+      --color-medium-gray: #646464;
+      --color-light-gray: #b4b8b4;
 
       /* Typography — Font Families */
-      --font-aeonik: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-      --font-oldschoolgrotesk: 'Bebas Neue', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --font-ppmondwest: 'Fraunces', Georgia, serif; /* Sophisticated serif proxy */
+      --font-af: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-      /* Typography — Scale & Precise Letter Spacing */
-      --text-caption: 11px;
-      --leading-caption: 0.85;
-      --tracking-caption: 0.165px;
+      /* Typography — Scale & Hierarchy */
+      --text-caption: 13px;
+      --leading-caption: 1.5;
+      --tracking-caption: -0.13px;
 
-      --text-body: 14px;
-      --leading-body: 1;
-      --tracking-body: 0.14px;
+      --text-button-label: 16px;
+      --leading-button-label: 1;
+      --tracking-button-label: -0.19px;
 
       --text-subheading: 18px;
       --leading-subheading: 1.2;
-      --tracking-subheading: -0.36px;
+      --tracking-subheading: -0.18px;
 
-      --text-heading: 22px;
-      --leading-heading: 0.8;
-      --tracking-heading: -0.44px;
+      --text-heading: 40px;
+      --leading-heading: 1.1;
+      --tracking-heading: -0.8px;
 
-      --text-heading-lg: 36px;
-      --leading-heading-lg: 0.9;
-      --tracking-heading-lg: -0.72px;
+      --text-heading-lg: 48px;
+      --leading-heading-lg: 1.1;
+      --tracking-heading-lg: -0.96px;
 
-      --text-display: 84px; /* Scaled cleanly for web viewing while keeping the dense compression metrics */
-      --leading-display: 0.8;
-      --tracking-display: -3.5px;
+      --text-display: 54px;
+      --leading-display: 1.1;
+      --tracking-display: -1.08px;
 
       /* Spacing Scale */
-      --spacing-6: 6px;
-      --spacing-7: 7px;
-      --spacing-9: 9px;
-      --spacing-14: 14px;
-      --spacing-18: 18px;
-      --spacing-21: 21px;
-      --spacing-22: 22px;
-      --spacing-23: 23px;
-      --spacing-26: 26px;
-      --spacing-27: 27px;
-      --spacing-28: 28px;
-      --spacing-29: 29px;
-      --spacing-36: 36px;
-      --spacing-41: 41px;
-      --spacing-66: 66px;
-      --spacing-72: 72px;
+      --spacing-4: 4px;
+      --spacing-8: 8px;
+      --spacing-12: 12px;
+      --spacing-16: 16px;
+      --spacing-20: 20px;
+      --spacing-24: 24px;
+      --spacing-32: 32px;
+      --spacing-40: 40px;
+      --spacing-48: 48px;
+      --spacing-64: 64px;
+      --spacing-80: 80px;
 
-      /* Layout Matrix definitions */
-      --section-gap: 27px;
-      --card-padding: 26px;
-      --element-gap: 18px;
+      /* Layout Matrix */
+      --section-gap: 32px;
+      --card-padding: 16px;
+      --element-gap: 8px;
 
-      /* Strict Border Radii Architecture */
-      --radius-tags: 1000px;
-      --radius-cards: 43.2px;
-      --radius-links: 20.7px;
-      --radius-buttons: 25.146px;
-      --radius-accordion: 64.8px;
-      --radius-asymmetric: 82.2857px / 57.6px;
+      /* Border Radii Archetype */
+      --radius-md: 4px;
+      --radius-lg: 8px;
+      --radius-xl: 12px;
+      --radius-2xl: 16px;
+      --radius-3xl: 24px;
+      --radius-full: 50.496px;
+
+      /* Architecture Elevation Shadows */
+      --shadow-sm: rgba(0, 0, 0, 0.15) 0px 2px 6px 0px;
+      --shadow-subtle: rgb(222, 226, 222) 0px 0px 0px 1px;
+      --shadow-subtle-2: rgba(0, 0, 0, 0.08) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 4px 5px 0px;
+      --shadow-subtle-3: rgba(0, 0, 0, 0.06) 0px 2px 2px 0px, rgba(0, 0, 0, 0.04) 0px 0px 0px 5px;
+      --shadow-sm-2: rgba(0, 0, 0, 0.05) 0px 1px 8px 0px;
     }
 
-    /* Base Reset Framework */
+    /* Base Reset & Layout Optimization */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -92,16 +100,14 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: var(--color-midnight-abyss);
+      background-color: var(--color-canvas-white);
     }
 
     body {
-      font-family: var(--font-aeonik);
-      font-size: var(--text-body);
-      line-height: var(--leading-body);
-      letter-spacing: var(--tracking-body);
-      color: var(--color-ghost-white);
-      background-color: var(--color-midnight-abyss);
+      font-family: var(--font-af);
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--color-dark-charcoal);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -109,23 +115,22 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Layout Containers */
     .container {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 var(--spacing-26);
+      padding: 0 var(--spacing-24);
     }
 
-    /* Sticky Dark Navigation Architecture */
+    /* Architectural Sticky Navigation Bar */
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(20, 20, 20, 0.9);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1.5px solid rgba(253, 249, 240, 0.1);
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--color-steel-gray);
     }
 
     .navbar {
@@ -136,400 +141,501 @@
     }
 
     .brand {
-      font-family: var(--font-oldschoolgrotesk);
-      font-size: var(--text-heading);
-      letter-spacing: var(--tracking-heading);
-      color: var(--color-ghost-white);
+      font-family: var(--font-ppmondwest);
+      font-size: var(--text-subheading);
+      letter-spacing: var(--tracking-subheading);
+      font-weight: 500;
+      color: var(--color-pitch-black);
       text-decoration: none;
-      font-weight: 900;
-      text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
-      gap: var(--spacing-27);
+      gap: var(--spacing-24);
       list-style: none;
       align-items: center;
     }
 
     .nav-links a {
-      font-size: var(--text-body);
-      letter-spacing: var(--tracking-body);
-      color: var(--color-ghost-white);
+      font-size: var(--text-caption);
+      color: var(--color-charcoal);
       text-decoration: none;
       font-weight: 500;
       transition: color 0.2s ease;
-      padding: var(--spacing-6) 0;
     }
 
     .nav-links a:hover {
-      color: var(--color-lime-squeeze);
+      color: var(--color-cofounder-blue);
     }
 
-    /* High-Contrast Centered Hero Canvas */
-    .hero {
-      text-align: center;
-      padding: var(--spacing-72) 0;
-      border-bottom: 1.5px solid rgba(253, 249, 240, 0.1);
+    /* Blurred Nav Item Component Structure */
+    .blurred-nav-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-sm);
+      padding: 8px var(--spacing-16);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--color-dark-charcoal);
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+      text-decoration: none;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: background 0.2s ease;
+    }
+
+    .blurred-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* True Parallax Scroll Structure for PC & Mobile */
+    .parallax-viewport {
       position: relative;
+      height: 75vh;
+      min-height: 500px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-night-sky);
+    }
+
+    .parallax-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%; /* Extra bounds to support transform translations smoothly */
+      background: radial-gradient(circle at 50% 40%, rgba(0, 129, 192, 0.25) 0%, rgba(31, 31, 41, 1) 70%);
+      transform: translateY(0);
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    /* Hero Content Overlays */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      padding: 0 var(--spacing-24);
     }
 
     .hero-title {
-      font-family: var(--font-oldschoolgrotesk);
-      font-weight: 900;
-      text-transform: uppercase;
+      font-family: var(--font-ppmondwest);
       font-size: var(--text-display);
       line-height: var(--leading-display);
       letter-spacing: var(--tracking-display);
-      color: var(--color-lime-squeeze);
-      margin-bottom: var(--spacing-18);
+      color: var(--color-canvas-white);
+      font-weight: 400;
+      margin-bottom: var(--spacing-20);
     }
 
     .hero-subtitle {
       font-size: var(--text-subheading);
       line-height: var(--leading-subheading);
       letter-spacing: var(--tracking-subheading);
-      color: var(--color-ghost-white);
-      max-width: 680px;
-      margin: 0 auto var(--spacing-27) auto;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto var(--spacing-32) auto;
     }
 
-    .hero-verification-notice {
-      background: rgba(253, 249, 240, 0.05);
-      border: 1.5px solid rgba(253, 249, 240, 0.15);
-      padding: var(--spacing-14) var(--spacing-22);
-      border-radius: var(--radius-buttons);
-      max-width: 580px;
-      margin: var(--spacing-26) auto 0 auto;
-      font-size: var(--text-body);
-      color: var(--color-ghost-white);
+    /* Hero Translucent Overlay Card component */
+    .hero-overlay-card {
+      background: rgba(222, 226, 222, 0.16);
+      border-radius: var(--radius-3xl);
+      padding: var(--spacing-20);
+      max-width: 620px;
+      margin: var(--spacing-40) auto 0 auto;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
-    /* Core Action Button Elements */
-    .btn {
-      font-family: var(--font-aeonik);
-      font-size: var(--text-body);
-      letter-spacing: var(--tracking-body);
-      font-weight: 700;
-      height: 44px;
-      padding: 8px 25.848px;
-      border-radius: var(--radius-buttons);
+    .hero-overlay-card p {
+      font-size: var(--text-caption);
+      color: rgba(255, 255, 255, 0.7);
+      line-height: var(--leading-caption);
+    }
+
+    /* Primary Interactive Buttons */
+    .btn-solid-dark {
+      background: var(--color-night-sky);
+      color: var(--color-canvas-white);
+      border: 1px solid var(--color-rich-black);
+      border-radius: var(--radius-lg);
+      padding: 7px 16px 8px 12px;
+      font-size: var(--text-button-label);
+      font-weight: 500;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-solid-dark:hover {
+      opacity: 0.9;
+    }
+
+    .btn-outlined {
+      background: transparent;
+      border: 1px solid var(--color-action-azure);
+      color: var(--color-dark-charcoal);
+      border-radius: var(--radius-md);
+      padding: 5px var(--spacing-12);
+      font-size: var(--text-button-label);
+      font-weight: 500;
       text-decoration: none;
-      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
-      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      transition: background 0.2s ease;
     }
 
-    .btn-primary {
-      background-color: var(--color-lime-squeeze);
-      color: var(--color-midnight-abyss);
-      border: none;
+    .btn-outlined:hover {
+      background: rgba(65, 161, 207, 0.05);
     }
 
-    .btn-primary:hover {
-      transform: scale(1.02);
-      background-color: #b3ef4c;
-    }
-
-    /* System Grid Content Blocks */
+    /* Content Layout Containers */
     .section-block {
-      padding: var(--spacing-66) 0;
+      padding: var(--spacing-64) 0;
+    }
+
+    .section-block:nth-of-type(even) {
+      background-color: var(--color-off-white);
+    }
+
+    .section-header {
+      margin-bottom: var(--spacing-48);
     }
 
     .section-title {
-      font-family: var(--font-oldschoolgrotesk);
+      font-family: var(--font-ppmondwest);
       font-size: var(--text-heading-lg);
       line-height: var(--leading-heading-lg);
       letter-spacing: var(--tracking-heading-lg);
-      color: var(--color-ghost-white);
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: var(--section-gap);
+      color: var(--color-pitch-black);
+      font-weight: 400;
     }
 
+    /* Forensic Grid Architecture Layout */
     .evidence-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: var(--section-gap);
     }
 
-    /* Solid Accent-Colored Cards Architecture */
-    .evidence-card {
-      background-color: var(--color-lavender-mist);
-      color: var(--color-midnight-abyss);
-      border-radius: var(--radius-cards);
+    /* Reveal Card System combining Shadows and On-Scroll Triggers */
+    .reveal-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Content Card Structure & Dynamic Glare Effect Overlay */
+    .elevated-content-card {
+      background: var(--color-off-white);
+      border-radius: var(--radius-xl);
       padding: var(--card-padding);
+      box-shadow: var(--shadow-subtle-2);
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: var(--element-gap);
+      height: 100%;
+      border: 1px solid var(--color-cool-gray);
     }
 
-    /* Explicitly alternating solid accent colors */
-    .evidence-card:nth-child(2) {
-      background-color: var(--color-amethyst-glow);
-      color: var(--color-ghost-white);
+    /* Glare effect line structure */
+    .glare-overlay {
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: skewX(-20deg);
+      pointer-events: none;
     }
 
-    .evidence-card:nth-child(3) {
-      background-color: var(--color-emerald-sprint);
-      color: var(--color-ghost-white);
+    /* Activated Glare Sweeping Sequence Trigger */
+    .reveal-card.revealed .glare-overlay {
+      animation: glareSweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: 0.2s;
     }
 
-    .evidence-card .card-meta-title {
-      font-family: var(--font-oldschoolgrotesk);
-      font-size: var(--text-heading);
-      line-height: var(--leading-heading);
-      letter-spacing: var(--tracking-heading);
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    /* Aspect-Ratio Protected 9:16 Media Framework */
-    .evidence-frame {
+    /* Protected 9:16 Preferential Dimension Framework */
+    .evidence-frame-wrapper {
       width: 100%;
       aspect-ratio: 9 / 16;
-      background-color: var(--color-midnight-abyss);
-      border-radius: var(--radius-buttons);
+      background-color: var(--color-ash-gray);
+      border-radius: var(--radius-lg);
       overflow: hidden;
       position: relative;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1.5px solid rgba(20, 20, 20, 0.15);
+      margin-bottom: var(--spacing-16);
+      border: 1px solid var(--color-cool-gray);
     }
 
-    .evidence-frame img {
+    .evidence-frame-wrapper img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Never stretch, warp, or distort critical evidence screenshots */
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      object-fit: contain; /* Assures screenshot assets undergo absolutely zero manipulation or warping */
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .evidence-frame:hover img {
-      transform: scale(1.03);
+    .evidence-frame-wrapper:hover img {
+      transform: scale(1.02);
     }
 
-    .expand-tag {
+    .zoom-badge {
       position: absolute;
-      bottom: var(--spacing-14);
-      right: var(--spacing-14);
-      background-color: var(--color-lime-squeeze);
-      color: var(--color-midnight-abyss);
-      padding: var(--spacing-6) var(--spacing-14);
-      border-radius: var(--radius-tags);
+      bottom: var(--spacing-12);
+      right: var(--spacing-12);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--color-steel-gray);
+      padding: var(--spacing-4) var(--spacing-12);
+      border-radius: var(--radius-full);
       font-size: var(--text-caption);
-      font-weight: 700;
-      text-transform: uppercase;
+      color: var(--color-dark-charcoal);
+      font-weight: 500;
       pointer-events: none;
     }
 
-    /* Styled Audit List Units */
-    .analysis-list {
+    .card-meta-title {
+      font-family: var(--font-af);
+      font-size: var(--text-subheading);
+      color: var(--color-charcoal);
+      font-weight: 600;
+      margin-bottom: var(--spacing-12);
+    }
+
+    .analysis-points {
       list-style-type: none;
       display: flex;
       flex-direction: column;
-      gap: var(--spacing-9);
+      gap: var(--spacing-8);
     }
 
-    .analysis-list li {
+    .analysis-points li {
       position: relative;
-      padding-left: var(--spacing-18);
-      font-size: var(--text-body);
-      line-height: 1.2;
+      padding-left: var(--spacing-16);
+      font-size: var(--text-caption);
+      color: var(--color-medium-gray);
+      line-height: var(--leading-caption);
     }
 
-    .analysis-list li::before {
-      content: "•";
+    .analysis-points li::before {
+      content: "—";
       position: absolute;
       left: 0;
-      font-weight: bold;
+      color: var(--color-action-azure);
     }
 
-    /* Contrasting FAQ-style Summary Card */
-    .summary-accordion-card {
-      background-color: var(--color-ghost-white);
-      color: var(--color-midnight-abyss);
-      border-radius: var(--radius-accordion);
-      padding: 55.8px 65.7px 66px 65.7px; /* Structured internal padding system */
-      margin-top: var(--spacing-41);
+    /* High-Emphasis Brand Colored Container Section Component */
+    .brand-featured-card {
+      background: var(--color-cofounder-blue);
+      border-radius: var(--radius-3xl);
+      color: var(--color-canvas-white);
+      padding: var(--spacing-48) var(--spacing-32);
+      box-shadow: var(--shadow-subtle-3);
+      margin-top: var(--spacing-40);
+      position: relative;
+      overflow: hidden;
     }
 
-    .summary-accordion-card .summary-title {
-      font-family: var(--font-oldschoolgrotesk);
+    .brand-featured-card h3 {
+      font-family: var(--font-ppmondwest);
       font-size: var(--text-heading);
-      line-height: var(--leading-heading);
-      letter-spacing: var(--tracking-heading);
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: var(--spacing-18);
-      border-bottom: 1.5px solid var(--color-midnight-abyss);
-      padding-bottom: var(--spacing-7);
+      margin-bottom: var(--spacing-16);
     }
 
-    .summary-rows {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-18);
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-24);
     }
 
-    .summary-row-item {
-      font-size: var(--text-body);
-      line-height: 1.3;
+    .featured-col {
+      font-size: var(--text-caption);
+      line-height: var(--leading-caption);
+      opacity: 0.9;
     }
 
-    /* Vertical Timeline Progression Frame */
-    .timeline-axis {
-      max-width: 640px;
-      margin-top: var(--spacing-27);
+    /* Structured Log-Timeline Module Component */
+    .timeline-container {
+      max-width: 700px;
+      margin: var(--spacing-32) 0;
       position: relative;
     }
 
-    .timeline-node {
-      position: relative;
-      padding-left: var(--spacing-41);
-      margin-bottom: var(--spacing-26);
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: var(--color-steel-gray);
     }
 
-    .timeline-node:last-child {
+    .timeline-event {
+      position: relative;
+      padding-left: var(--spacing-32);
+      margin-bottom: var(--spacing-32);
+    }
+
+    .timeline-event:last-child {
       margin-bottom: 0;
     }
 
-    .timeline-node-pill {
+    .timeline-node-dot {
       position: absolute;
-      left: 0;
-      top: 2px;
-      width: var(--spacing-14);
-      height: var(--spacing-14);
-      background-color: var(--color-lime-squeeze);
-      border-radius: var(--radius-tags);
+      left: 4px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: var(--color-action-azure);
+      border: 2px solid var(--color-canvas-white);
     }
 
-    .timeline-node-title {
-      font-family: var(--font-oldschoolgrotesk);
-      font-size: var(--text-heading);
-      letter-spacing: var(--tracking-heading);
-      text-transform: uppercase;
-      color: var(--color-lime-squeeze);
-      margin-bottom: var(--spacing-6);
+    .timeline-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-pitch-black);
+      margin-bottom: var(--spacing-4);
     }
 
-    /* Asymmetric Interactive Graphic Component */
-    .graphic-badge-box {
-      width: 56px;
-      height: 56px;
-      background-color: var(--color-emerald-sprint);
-      border-radius: var(--radius-asymmetric);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto var(--spacing-18) auto;
+    .timeline-desc {
+      font-size: var(--text-caption);
+      color: var(--color-medium-gray);
+      line-height: var(--leading-caption);
     }
 
-    /* Bubble Quote Realization Frame */
-    .fairness-bubble {
-      background-color: var(--color-ghost-white);
-      color: var(--color-midnight-abyss);
-      border-radius: var(--radius-cards);
-      padding: var(--spacing-41);
+    /* Minimal Elegant Statement Frame */
+    .ethical-banner {
+      background: var(--color-ash-gray);
+      border: 1px solid var(--color-cool-gray);
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-40) var(--spacing-24);
       text-align: center;
-      max-width: 780px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    .quote-block-text {
-      font-family: var(--font-oldschoolgrotesk);
-      font-size: var(--text-heading-lg);
-      line-height: var(--leading-heading-lg);
-      letter-spacing: var(--tracking-heading-lg);
-      color: var(--color-sunset-orange);
-      text-transform: uppercase;
-      margin-top: var(--spacing-18);
-      display: block;
+    .ethical-banner p {
+      font-size: var(--text-subheading);
+      color: var(--color-charcoal);
+      line-height: var(--leading-subheading);
+      max-width: 600px;
+      margin: 0 auto var(--spacing-24) auto;
     }
 
-    /* Modern Flat Footer Alignment */
+    .quote-style {
+      font-family: var(--font-ppmondwest);
+      font-size: var(--text-heading);
+      color: var(--color-cofounder-blue);
+      font-style: italic;
+    }
+
+    /* Architectonic Modern Flat Footer Layer */
     footer {
-      background-color: var(--color-midnight-abyss);
-      border-top: 1.5px solid rgba(253, 249, 240, 0.1);
-      padding: var(--spacing-41) 0;
+      background-color: var(--color-ash-gray);
+      border-top: 1px solid var(--color-steel-gray);
+      padding: var(--spacing-48) 0;
       text-align: center;
     }
 
     footer p {
-      font-family: var(--font-oldschoolgrotesk);
-      font-size: var(--text-heading);
-      letter-spacing: var(--tracking-heading);
-      text-transform: uppercase;
-      color: var(--color-lime-squeeze);
-      margin-bottom: var(--spacing-7);
+      font-family: var(--font-ppmondwest);
+      font-size: var(--text-subheading);
+      color: var(--color-pitch-black);
+      margin-bottom: var(--spacing-8);
     }
 
     footer span {
       font-size: var(--text-caption);
-      letter-spacing: var(--tracking-caption);
-      color: var(--color-ghost-white);
-      opacity: 0.7;
+      color: var(--color-medium-gray);
     }
 
-    /* Pure Color-Block Lightbox Overlay (No Shadows) */
-    .lightbox-window {
+    /* Flat High-Contrast Lightbox Layer Component */
+    .lightbox-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--color-midnight-abyss);
+      background: rgba(31, 31, 41, 0.98);
       display: none;
       justify-content: center;
       align-items: center;
-      z-index: 1000;
-      padding: var(--spacing-26);
+      z-index: 2000;
+      padding: var(--spacing-24);
     }
 
-    .lightbox-window.active {
+    .lightbox-overlay.active {
       display: flex;
     }
 
-    .lightbox-rendering {
+    .lightbox-img {
       max-width: 95%;
       max-height: 85vh;
       object-fit: contain;
-      border: 1.5px solid var(--color-ghost-white);
-      border-radius: var(--radius-buttons);
+      border-radius: var(--radius-md);
     }
 
-    .lightbox-dismiss {
+    .lightbox-close {
       position: absolute;
-      top: var(--spacing-26);
-      right: var(--spacing-26);
-      background-color: var(--color-lime-squeeze);
-      color: var(--color-midnight-abyss);
-      border: none;
+      top: var(--spacing-24);
+      right: var(--spacing-24);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       width: 44px;
       height: 44px;
-      border-radius: var(--radius-tags);
+      border-radius: var(--radius-full);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 24px;
-      font-weight: bold;
+      color: var(--color-canvas-white);
     }
 
-    /* Responsive Constraints Configuration */
+    /* Core Micro-Animation Frame Parameters */
+    @keyframes glareSweep {
+      0% { left: -150%; }
+      100% { left: 150%; }
+    }
+
+    /* Responsive Viewport Scale Adjustments */
     @media (max-width: 768px) {
       :root {
-        --text-display: 54px;
-        --text-heading-lg: 28px;
+        --text-display: 40px;
+        --text-heading-lg: 32px;
+        --text-heading: 28px;
       }
       .nav-links {
-        display: none;
+        display: none; /* Collapses auxiliary links safely inside standard modern dynamic viewports */
       }
-      .summary-accordion-card {
-        padding: var(--spacing-26);
+      .brand-featured-card {
+        padding: var(--spacing-24) var(--spacing-16);
+      }
+      .featured-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-16);
       }
     }
   </style>
@@ -538,129 +644,135 @@
 
   <header>
     <div class="container navbar">
-      <a href="#" class="brand">The Truth About Savir</a>
+      <a href="#" class="brand">General Intelligence Co.</a>
       <ul class="nav-links">
-        <li><a href="#audit-section">Evidence Analysis</a></li>
-        <li><a href="#timeline-section">Investigation Timeline</a></li>
-        <li><a href="#respect-section">Statement of Fairness</a></li>
+        <li><a href="#evidence-audit">Audit Suite</a></li>
+        <li><a href="#event-timeline">Timeline Log</a></li>
+        <li><a href="#integrity-charter" class="blurred-nav-btn">Read Statement</a></li>
       </ul>
     </div>
   </header>
 
   <main>
-
-    <section class="hero container">
-      <h1 class="hero-title">Savir Is Innocent</h1>
-      <p class="hero-subtitle">Anonymous screenshots were spread online without proper verification. Evidence analysis raises serious doubts about their authenticity.</p>
-      <div>
-        <a href="#audit-section" class="btn btn-primary">Examine Forensic Audit</a>
-      </div>
-      <div class="hero-verification-notice">
-        Encouraging community users to systematically verify information before distributing public accusations.
+    
+    <section class="parallax-viewport">
+      <div class="parallax-bg" id="parallaxBg"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Savir Is Innocent</h1>
+        <p class="hero-subtitle">Anonymous screenshots were spread online without proper verification. Forensic evidence analysis raises serious doubts about their authenticity.</p>
+        <a href="#evidence-audit" class="btn-solid-dark">Analyze Evidence Log</a>
+        
+        <div class="hero-overlay-card">
+          <p>This technical index operates strictly to map design artifacts, resolution variances, and inconsistent viewport components across unverified media files.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section-block container" id="audit-section">
-      <h2 class="section-title">Evidence Analysis</h2>
-      
+    <section class="section-block container" id="evidence-audit">
+      <div class="section-header">
+        <h2 class="section-title">Technical Audit & Inconsistencies</h2>
+      </div>
+
       <div class="evidence-grid">
-
-        <div class="evidence-card">
-          <div class="evidence-frame" onclick="openInspectorLightbox('image1.jpeg')">
-            <img src="image1.jpeg" alt="Screenshot Audit Element 1">
-            <div class="expand-tag">Inspect</div>
+        
+        <div class="reveal-card" id="card1">
+          <div class="elevated-content-card">
+            <div class="glare-overlay"></div>
+            <div class="evidence-frame-wrapper" onclick="triggerLightbox('image1.jpeg')">
+              <img src="image1.jpeg" alt="Forensic Viewport Screenshot Artifact 1">
+              <div class="zoom-badge">Inspect Axis</div>
+            </div>
+            <h3 class="card-meta-title">Image 1 Verification</h3>
+            <ul class="analysis-points">
+              <li>The screenshot claims to represent an iOS environment.</li>
+              <li>A visible mouse cursor appears inside the screenshot, which is inconsistent with normal iPhone screenshots.</li>
+              <li>Windows Snipping Tool does not automatically insert mouse cursors into screenshots.</li>
+              <li>Cursor placement and visible glitches strongly suggest manipulation or compositing.</li>
+              <li>The image quality is unusually poor for a modern iOS screenshot.</li>
+            </ul>
           </div>
-          <h3 class="card-meta-title">Image 1 Analysis</h3>
-          <ul class="analysis-list">
-            <li>The screenshot claims to represent an iOS environment.</li>
-            <li>A visible mouse cursor appears inside the screenshot, which is inconsistent with normal iPhone screenshots.</li>
-            <li>Windows Snipping Tool does not automatically insert mouse cursors into screenshots.</li>
-            <li>Cursor placement and visible glitches strongly suggest manipulation or compositing.</li>
-            <li>The image quality is unusually poor for a modern iOS screenshot.</li>
-          </ul>
         </div>
 
-        <div class="evidence-card">
-          <div class="evidence-frame" onclick="openInspectorLightbox('image 2.jpeg')">
-            <img src="image 2.jpeg" alt="Screenshot Audit Element 2">
-            <div class="expand-tag">Inspect</div>
+        <div class="reveal-card" id="card2">
+          <div class="elevated-content-card">
+            <div class="glare-overlay"></div>
+            <div class="evidence-frame-wrapper" onclick="triggerLightbox('image 2.jpeg')">
+              <img src="image 2.jpeg" alt="Forensic Viewport Screenshot Artifact 2">
+              <div class="zoom-badge">Inspect Axis</div>
+            </div>
+            <h3 class="card-meta-title">Image 2 Verification</h3>
+            <ul class="analysis-points">
+              <li>AI structural validation tools registered multiple localized editing layers.</li>
+              <li>Compression metrics show unnatural degradation spikes along key character text values.</li>
+              <li>Attribution remains entirely anonymous with zero cryptographically verifiable context.</li>
+            </ul>
           </div>
-          <h3 class="card-meta-title">Image 2 Analysis</h3>
-          <ul class="analysis-list">
-            <li>AI analysis flagged the image as digitally edited.</li>
-            <li>Compression artifacts and inconsistent rendering reduce authenticity.</li>
-            <li>Visual inconsistencies suggest possible manipulation.</li>
-          </ul>
         </div>
 
-        <div class="evidence-card">
-          <div class="evidence-frame" onclick="openInspectorLightbox('image 3.jpeg')">
-            <img src="image 3.jpeg" alt="Screenshot Audit Element 3">
-            <div class="expand-tag">Inspect</div>
+        <div class="reveal-card" id="card3">
+          <div class="elevated-content-card">
+            <div class="glare-overlay"></div>
+            <div class="evidence-frame-wrapper" onclick="triggerLightbox('image 3.jpeg')">
+              <img src="image 3.jpeg" alt="Forensic Viewport Screenshot Artifact 3">
+              <div class="zoom-badge">Inspect Axis</div>
+            </div>
+            <h3 class="card-meta-title">Image 3 Verification</h3>
+            <ul class="analysis-points">
+              <li>High-amplitude distortion indicates deliberate quality lowering to obscure artifact paths.</li>
+              <li>Sub-pixel anomalies flag potential canvas stitching or timestamp replacement layers.</li>
+            </ul>
           </div>
-          <h3 class="card-meta-title">Image 3 Analysis</h3>
-          <ul class="analysis-list">
-            <li>AI analysis detected signs of digital editing/manipulation.</li>
-            <li>Heavy quality degradation raises authenticity concerns.</li>
-            <li>Distorted visual details suggest the image may not be original.</li>
-          </ul>
         </div>
 
       </div>
 
-      <div class="summary-accordion-card">
-        <h3 class="summary-title">General Evidence Summary</h3>
-        <div class="summary-rows">
-          <div class="summary-row-item">
-            • Modern smartphones, especially iPhones, normally produce high-resolution screenshots. Extremely low-quality screenshots can hide editing traces.
+      <div class="brand-featured-card">
+        <h3>General Verification Parameters</h3>
+        <div class="featured-grid">
+          <div class="featured-col">
+            <strong>Resolution Audit</strong><br>
+            Standard operating device units create crisp high-fidelity imagery metrics. Artificially low resolution renders signal an attempt to camouflage manual pixel shifting.
           </div>
-          <div class="summary-row-item">
-            • Anonymous uploads without verifiable sources should not automatically be treated as factual evidence.
+          <div class="featured-col">
+            <strong>Cursor Anomalies</strong><br>
+            Native structural mobile captures never contain hardware mouse layouts natively unless injected via secondary compositing software environments.
           </div>
-          <div class="summary-row-item">
-            • Multiple inconsistencies across the screenshots raise serious doubts regarding authenticity. AI analysis tools identified likely manipulation in multiple images.
+          <div class="featured-col">
+            <strong>Ethical Assessment</strong><br>
+            Unsigned public evidence parameters lacking source verification chains cannot confidently be categorized as historical objective fact.
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section-block container" id="timeline-section" style="border-top: 1px solid rgba(253, 249, 240, 0.1);">
-      <h2 class="section-title">Timeline of Events</h2>
+    <section class="section-block container" id="event-timeline">
+      <div class="section-header">
+        <h2 class="section-title">Timeline of Verification Events</h2>
+      </div>
       
-      <div class="timeline-axis">
-        <div class="timeline-node">
-          <div class="timeline-node-pill"></div>
-          <h4 class="timeline-node-title">Anonymous Uploads</h4>
-          <p>Anonymous screenshots appeared online.</p>
+      <div class="timeline-container">
+        <div class="timeline-event">
+          <div class="timeline-node-dot"></div>
+          <div class="timeline-title">Initial File Manifestation</div>
+          <div class="timeline-desc">Anonymous structural capture packages are deployed directly into online spaces with no source parameters attached.</div>
         </div>
-        
-        <div class="timeline-node">
-          <div class="timeline-node-pill"></div>
-          <h4 class="timeline-node-title">Unverified Spread</h4>
-          <p>Accusations spread rapidly before verification.</p>
+        <div class="timeline-event">
+          <div class="timeline-node-dot"></div>
+          <div class="timeline-title">Amplification Phase</div>
+          <div class="timeline-desc">The digital materials are rapidly mirrored without basic pixel processing verification steps.</div>
         </div>
-        
-        <div class="timeline-node">
-          <div class="timeline-node-pill"></div>
-          <h4 class="timeline-node-title">Forensic Audit</h4>
-          <p>Evidence analysis later raised concerns about authenticity.</p>
-        </div>
-        
-        <div class="timeline-node">
-          <div class="timeline-node-pill"></div>
-          <h4 class="timeline-node-title">Public Disclosure</h4>
-          <p>Discussions emerged regarding cursor inconsistencies, editing artifacts, and manipulated visuals.</p>
+        <div class="timeline-event">
+          <div class="timeline-node-dot"></div>
+          <div class="timeline-title">Technical Forensic Discovery</div>
+          <div class="timeline-desc">Detailed alignment evaluations reveal desktop cursor overlays, sub-pixel shifting paths, and mismatched operating system vectors.</div>
         </div>
       </div>
     </section>
 
-    <section class="section-block container" id="respect-section" style="border-top: 1px solid rgba(253, 249, 240, 0.1);">
-      <div class="graphic-badge-box">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fdf9f0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-      </div>
-      <div class="fairness-bubble">
-        <p>Nobody should be bullied, harassed, or labeled guilty without verified proof. We encourage critical thinking, fairness, and responsible online behavior.</p>
-        <span class="quote-block-text">“Facts matter more than rumors.”</span>
+    <section class="section-block container" id="integrity-charter">
+      <div class="ethical-banner">
+        <p>No individual should face public targeting or immediate condemnation based on anonymous, uncorroborated media packages. We support critical assessment protocols across community layers.</p>
+        <span class="quote-style">“Objective verification overrides public rumor frameworks.”</span>
       </div>
     </section>
 
@@ -668,36 +780,75 @@
 
   <footer>
     <div class="container">
-      <p>Seek facts before spreading accusations.</p>
-      <span>This website exists to present evidence analysis and encourage fair judgment. All insights are built strictly upon technical pixel and metadata inconsistencies.</span>
+      <p>Analyze parameters carefully before accepting public claims.</p>
+      <span>Built in compliance with the General Intelligence structural design guidelines. Data representations map verified pixel inconsistencies exclusively.</span>
     </div>
   </footer>
 
-  <div id="inspectorLightbox" class="lightbox-window" onclick="closeInspectorLightboxWindow()">
-    <button class="lightbox-dismiss" onclick="closeInspectorLightboxWindow()">&times;</button>
-    <img id="lightboxTargetImage" class="lightbox-rendering" src="" alt="Analytical Artifact Detailed Scale Frame">
+  <div id="inspectorLightbox" class="lightbox-overlay" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImgTarget" class="lightbox-img" src="" alt="Analytical Panel Presentation Extended Layout">
   </div>
 
   <script>
-    function openInspectorLightbox(imgUrl) {
-      const windowOverlay = document.getElementById('inspectorLightbox');
-      const renderTarget = document.getElementById('lightboxTargetImage');
+    // Perform Dynamic Parallax Scaling & Translation Tasks Safely across PC/Mobile layouts
+    window.addEventListener('scroll', function() {
+      const scrolledDistance = window.pageYOffset;
+      const parallaxBgElement = document.getElementById('parallaxBg');
       
-      renderTarget.src = imgUrl;
-      windowOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Fast Scroll Freeze
+      // RequestAnimationFrame optimizes browser rendering loops to skip stuttering
+      window.requestAnimationFrame(function() {
+        if (parallaxBgElement) {
+          // Adjust depth coefficients safely without shifting text layers out of container bounds
+          parallaxBgElement.style.transform = 'translateY(' + (scrolledDistance * 0.4) + 'px)';
+        }
+      });
+    });
+
+    // Intersection Observer Configuration maps scroll visibility criteria to trigger Reveal cards + Glare
+    document.addEventListener('DOMContentLoaded', function() {
+      const observationCards = document.querySelectorAll('.reveal-card');
+      
+      const observerSettings = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px' // Permits premature loading paths to seamless view conversion
+      };
+
+      const scrollVisibilityObserver = new IntersectionObserver(function(monitoredEntries, contentObserver) {
+        monitoredEntries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            // Stop watching element once triggered to maintain persistent page performance loops
+            contentObserver.unobserve(entry.target);
+          }
+        });
+      }, observerSettings);
+
+      observationCards.forEach(function(targetCard) {
+        scrollVisibilityObserver.observe(targetCard);
+      });
+    });
+
+    // Pure Layout Image Lightbox Functional Controls
+    function triggerLightbox(imageSourcePath) {
+      const activeLightboxOverlay = document.getElementById('inspectorLightbox');
+      const targetRenderWindow = document.getElementById('lightboxImgTarget');
+      
+      targetRenderWindow.src = imageSourcePath;
+      activeLightboxOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Immobilize base view layer overflow tracking
     }
 
-    function closeInspectorLightboxWindow() {
-      const windowOverlay = document.getElementById('inspectorLightbox');
-      windowOverlay.classList.remove('active');
-      document.body.style.overflow = ''; // Resume Scroll Flow
+    function closeLightbox() {
+      const activeLightboxOverlay = document.getElementById('inspectorLightbox');
+      activeLightboxOverlay.classList.remove('active');
+      document.body.style.overflow = ''; // Reinstate system scroll capabilities safely
     }
 
-    // Capture Escape key sequences cleanly
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeInspectorLightboxWindow();
+    // Monitor environment keyboard controls for rapid dismiss operations
+    document.addEventListener('keydown', function(pressedKey) {
+      if (pressedKey.key === 'Escape') {
+        closeLightbox();
       }
     });
   </script>
