@@ -3,640 +3,336 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Truth About Savir — Investigative Evidence & Analysis</title>
+  <title>The Truth About Savir — Evidence Playground</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Design Tokens — Colors */
-      --color-night-sky: #1f1f29;
-      --color-cofounder-blue: #0081c0;
-      --color-action-azure: #41a1cf;
+      /* Playful Colors */
+      --color-midnight-ink: #0f172a;
+      --color-vivacious-pink: #ff2e95;
+      --color-frost-canvas: #f6f2ee;
+      --gradient-frost-canvas: linear-gradient(225deg, #f6f2ee 0%, #ffc8c6 10%, #edd8f8 20%, #ddbef8 30%, #ce9afa 40%, #c473f3 50%, #b258e7 60%, #9c3ae7 70%, #7e24dd 80%, #5a19d0 90%, #2f07b8 100%);
       --color-pitch-black: #000000;
-      --color-canvas-white: #ffffff;
-      --color-off-white: #fefffc;
-      --color-ash-gray: #f9faf7;
-      --color-cool-gray: #eef1ed;
-      --color-steel-gray: #dee2de;
-      --color-dark-charcoal: #171717;
-      --color-charcoal: #2c2c2c;
-      --color-rich-black: #282834;
-      --color-slate-gray: #444141;
-      --color-medium-gray: #646464;
-      --color-light-gray: #b4b8b4;
+      --color-deep-graphite: #111111;
+      --color-coal-text: #202126;
+      --color-pale-ash: #e8e5e0;
+      --color-cloud-white: #ffffff;
+      --color-slate-gray: #414040;
+      --color-light-taupe: #e2dcd6;
+      --color-light-graphite: #353535;
 
       /* Typography — Font Families */
-      --font-ppmondwest: 'Fraunces', Georgia, serif; /* Sophisticated serif proxy */
-      --font-af: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      --font-arial: 'Arial', Helvetica, sans-serif;
 
-      /* Typography — Scale & Hierarchy */
+      /* Fluid Typography Scale */
       --text-caption: 13px;
-      --leading-caption: 1.5;
-      --tracking-caption: -0.13px;
+      --text-body: 16px;
+      --text-subheading: clamp(20px, 3vw, 26px);
+      --text-heading-sm: clamp(24px, 4vw, 30px);
+      --text-heading: clamp(40px, 6vw, 70px);
+      --text-display: clamp(48px, 8vw, 79px);
 
-      --text-button-label: 16px;
-      --leading-button-label: 1;
-      --tracking-button-label: -0.19px;
-
-      --text-subheading: 18px;
-      --leading-subheading: 1.2;
-      --tracking-subheading: -0.18px;
-
-      --text-heading: 40px;
-      --leading-heading: 1.1;
-      --tracking-heading: -0.8px;
-
-      --text-heading-lg: 48px;
-      --leading-heading-lg: 1.1;
-      --tracking-heading-lg: -0.96px;
-
-      --text-display: 54px;
-      --leading-display: 1.1;
-      --tracking-display: -1.08px;
+      /* Tracking */
+      --tracking-tight: -0.002em;
 
       /* Spacing Scale */
-      --spacing-4: 4px;
-      --spacing-8: 8px;
-      --spacing-12: 12px;
-      --spacing-16: 16px;
-      --spacing-20: 20px;
-      --spacing-24: 24px;
-      --spacing-32: 32px;
-      --spacing-40: 40px;
-      --spacing-48: 48px;
-      --spacing-64: 64px;
-      --spacing-80: 80px;
+      --spacing-4: 4px; --spacing-8: 8px; --spacing-10: 10px; --spacing-12: 12px;
+      --spacing-16: 16px; --spacing-20: 20px; --spacing-24: 24px; --spacing-32: 32px;
+      --spacing-36: 36px; --spacing-60: 60px;
+      --section-gap: 113px;
+      
+      /* Radii & Shadows */
+      --radius-images: 16px;
+      --radius-cards: 44px;
+      --radius-buttons: 99px;
+      --radius-tags: 999px;
+      --shadow-xl: rgba(0, 0, 0, 0.22) 0px 32px 80px 0px, rgba(0, 0, 0, 0.08) 0px 2px 8px 0px;
 
-      /* Layout Matrix */
-      --section-gap: 32px;
-      --card-padding: 16px;
-      --element-gap: 8px;
-
-      /* Border Radii Archetype */
-      --radius-md: 4px;
-      --radius-lg: 8px;
-      --radius-xl: 12px;
-      --radius-2xl: 16px;
-      --radius-3xl: 24px;
-      --radius-full: 50.496px;
-
-      /* Architecture Elevation Shadows */
-      --shadow-sm: rgba(0, 0, 0, 0.15) 0px 2px 6px 0px;
-      --shadow-subtle: rgb(222, 226, 222) 0px 0px 0px 1px;
-      --shadow-subtle-2: rgba(0, 0, 0, 0.08) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 4px 5px 0px;
-      --shadow-subtle-3: rgba(0, 0, 0, 0.06) 0px 2px 2px 0px, rgba(0, 0, 0, 0.04) 0px 0px 0px 5px;
-      --shadow-sm-2: rgba(0, 0, 0, 0.05) 0px 1px 8px 0px;
+      /* Global Dynamic Variables */
+      --scroll-y: 0px;
     }
 
-    /* Base Reset & Layout Optimization */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--color-canvas-white);
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background-color: var(--color-frost-canvas); }
     body {
-      font-family: var(--font-af);
-      font-size: 15px;
-      line-height: 1.5;
-      color: var(--color-dark-charcoal);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      font-family: var(--font-inter);
+      font-size: var(--text-body);
+      line-height: 1.2;
+      color: var(--color-midnight-ink);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Base Layout */
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1500px;
       margin: 0 auto;
       padding: 0 var(--spacing-24);
     }
 
-    /* Architectural Sticky Navigation Bar */
+    /* --- Navigation --- */
     header {
-      position: sticky;
-      top: 0;
+      position: fixed;
+      top: 0; left: 0; right: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--color-steel-gray);
+      background: rgba(246, 242, 238, 0.85); /* Frost Canvas with opacity */
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-pale-ash);
     }
-
     .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
+      display: flex; justify-content: space-between; align-items: center;
+      height: 80px;
     }
-
     .brand {
-      font-family: var(--font-ppmondwest);
-      font-size: var(--text-subheading);
-      letter-spacing: var(--tracking-subheading);
-      font-weight: 500;
-      color: var(--color-pitch-black);
-      text-decoration: none;
+      font-family: var(--font-inter); font-size: var(--text-subheading);
+      color: var(--color-midnight-ink); text-decoration: none; font-weight: 900;
+      letter-spacing: var(--tracking-tight);
     }
-
-    .nav-links {
-      display: flex;
-      gap: var(--spacing-24);
-      list-style: none;
-      align-items: center;
-    }
-
+    .nav-links { display: flex; gap: var(--spacing-32); align-items: center; list-style: none; }
     .nav-links a {
-      font-size: var(--text-caption);
-      color: var(--color-charcoal);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
+      font-family: var(--font-arial); font-size: 15px; font-weight: 600;
+      color: var(--color-midnight-ink); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--color-vivacious-pink); }
+
+    /* Ghost Nav Button */
+    .btn-ghost {
+      background: transparent; color: var(--color-midnight-ink);
+      font-family: var(--font-arial); font-size: 16px; font-weight: 600;
+      padding: 12px 32px; border-radius: var(--radius-buttons); text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(15, 23, 42, 0.05); }
+
+    /* Primary CTA */
+    .btn-primary {
+      background: var(--color-vivacious-pink); color: var(--color-frost-canvas);
+      font-family: var(--font-arial); font-size: 15px; font-weight: 600;
+      padding: 14px 24px; border-radius: var(--radius-buttons); text-decoration: none;
+      display: inline-flex; transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(255, 46, 149, 0.4);
     }
 
-    .nav-links a:hover {
-      color: var(--color-cofounder-blue);
-    }
-
-    /* Blurred Nav Item Component Structure */
-    .blurred-nav-btn {
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: var(--radius-full);
-      box-shadow: var(--shadow-sm);
-      padding: 8px var(--spacing-16);
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--color-dark-charcoal);
-      backdrop-filter: blur(9px);
-      -webkit-backdrop-filter: blur(9px);
-      text-decoration: none;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      transition: background 0.2s ease;
-    }
-
-    .blurred-nav-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    /* True Parallax Scroll Structure for PC & Mobile */
-    .parallax-viewport {
+    /* --- Hero Section & Vibrant Parallax --- */
+    .hero-section {
       position: relative;
-      height: 75vh;
-      min-height: 500px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--color-night-sky);
+      min-height: 90vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; padding: 120px 0 80px 0;
     }
-
+    
+    /* Hardware-Accelerated Playful Gradient Parallax */
     .parallax-bg {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 120%; /* Extra bounds to support transform translations smoothly */
-      background: radial-gradient(circle at 50% 40%, rgba(0, 129, 192, 0.25) 0%, rgba(31, 31, 41, 1) 70%);
-      transform: translateY(0);
+      top: -20%; left: -10%; width: 120%; height: 140%;
+      background: var(--gradient-frost-canvas);
+      /* Moves slightly slower than the scroll to create immense depth */
+      transform: translate3d(0, calc(var(--scroll-y) * 0.45), 0);
       will-change: transform;
-      pointer-events: none;
+      z-index: 0;
+    }
+    /* Subtle overlay to ensure text contrast against vibrant background */
+    .hero-section::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(246, 242, 238, 0.1), var(--color-frost-canvas));
+      z-index: 1; pointer-events: none;
     }
 
-    /* Hero Content Overlays */
     .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      max-width: 800px;
-      padding: 0 var(--spacing-24);
+      position: relative; z-index: 2; text-align: center; max-width: 900px;
     }
-
     .hero-title {
-      font-family: var(--font-ppmondwest);
-      font-size: var(--text-display);
-      line-height: var(--leading-display);
-      letter-spacing: var(--tracking-display);
-      color: var(--color-canvas-white);
-      font-weight: 400;
-      margin-bottom: var(--spacing-20);
+      font-size: var(--text-display); font-weight: 900;
+      color: var(--color-pitch-black); letter-spacing: var(--tracking-tight);
+      line-height: 1; margin-bottom: var(--spacing-24);
     }
-
     .hero-subtitle {
-      font-size: var(--text-subheading);
-      line-height: var(--leading-subheading);
-      letter-spacing: var(--tracking-subheading);
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 600px;
-      margin: 0 auto var(--spacing-32) auto;
-    }
-
-    /* Hero Translucent Overlay Card component */
-    .hero-overlay-card {
-      background: rgba(222, 226, 222, 0.16);
-      border-radius: var(--radius-3xl);
-      padding: var(--spacing-20);
-      max-width: 620px;
-      margin: var(--spacing-40) auto 0 auto;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .hero-overlay-card p {
-      font-size: var(--text-caption);
-      color: rgba(255, 255, 255, 0.7);
-      line-height: var(--leading-caption);
-    }
-
-    /* Primary Interactive Buttons */
-    .btn-solid-dark {
-      background: var(--color-night-sky);
-      color: var(--color-canvas-white);
-      border: 1px solid var(--color-rich-black);
-      border-radius: var(--radius-lg);
-      padding: 7px 16px 8px 12px;
-      font-size: var(--text-button-label);
+      font-size: var(--text-subheading); color: var(--color-midnight-ink);
+      line-height: 1.33; max-width: 700px; margin: 0 auto var(--spacing-36);
       font-weight: 500;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      transition: opacity 0.2s ease;
     }
 
-    .btn-solid-dark:hover {
-      opacity: 0.9;
-    }
-
-    .btn-outlined {
-      background: transparent;
-      border: 1px solid var(--color-action-azure);
-      color: var(--color-dark-charcoal);
-      border-radius: var(--radius-md);
-      padding: 5px var(--spacing-12);
-      font-size: var(--text-button-label);
-      font-weight: 500;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      transition: background 0.2s ease;
-    }
-
-    .btn-outlined:hover {
-      background: rgba(65, 161, 207, 0.05);
-    }
-
-    /* Content Layout Containers */
-    .section-block {
-      padding: var(--spacing-64) 0;
-    }
-
-    .section-block:nth-of-type(even) {
-      background-color: var(--color-off-white);
-    }
-
-    .section-header {
-      margin-bottom: var(--spacing-48);
-    }
-
+    /* --- Core Typography & Spacing Rules --- */
+    .section-padding { padding-top: var(--section-gap); padding-bottom: var(--spacing-60); }
+    .section-header { text-align: center; margin-bottom: 70px; }
     .section-title {
-      font-family: var(--font-ppmondwest);
-      font-size: var(--text-heading-lg);
-      line-height: var(--leading-heading-lg);
-      letter-spacing: var(--tracking-heading-lg);
-      color: var(--color-pitch-black);
-      font-weight: 400;
+      font-size: var(--text-heading); font-weight: 900;
+      color: var(--color-pitch-black); letter-spacing: var(--tracking-tight);
+      line-height: 1.15;
     }
 
-    /* Forensic Grid Architecture Layout */
-    .evidence-grid {
+    /* --- Evidence Cards Grid (Deep Graphite Theme) --- */
+    .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--section-gap);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+      gap: 40px;
     }
 
-    /* Reveal Card System combining Shadows and On-Scroll Triggers */
-    .reveal-card {
-      opacity: 0;
-      transform: translateY(30px);
+    /* Smooth Scroll Reveal Framework */
+    .reveal-item {
+      opacity: 0; transform: translateY(60px);
       transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .reveal-item.is-visible { opacity: 1; transform: translateY(0); }
 
-    .reveal-card.revealed {
-      opacity: 1;
-      transform: translateY(0);
+    /* The Feature Card */
+    .feature-card {
+      background: var(--color-deep-graphite);
+      border-radius: var(--radius-cards);
+      padding: 32px; /* Sufficient padding for the large 44px radius */
+      box-shadow: var(--shadow-xl);
+      position: relative; overflow: hidden; height: 100%;
+      display: flex; flex-direction: column;
+      color: var(--color-cloud-white);
     }
 
-    /* Content Card Structure & Dynamic Glare Effect Overlay */
-    .elevated-content-card {
-      background: var(--color-off-white);
-      border-radius: var(--radius-xl);
-      padding: var(--card-padding);
-      box-shadow: var(--shadow-subtle-2);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      border: 1px solid var(--color-cool-gray);
+    /* Stunning Dynamic Glare Effect */
+    .feature-card::before {
+      content: ''; position: absolute; top: 0; left: -150%;
+      width: 80%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      transform: skewX(-25deg);
+      pointer-events: none; z-index: 10;
     }
-
-    /* Glare effect line structure */
-    .glare-overlay {
-      position: absolute;
-      top: 0;
-      left: -150%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.4) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      transform: skewX(-20deg);
-      pointer-events: none;
-    }
-
-    /* Activated Glare Sweeping Sequence Trigger */
-    .reveal-card.revealed .glare-overlay {
-      animation: glareSweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    .reveal-item.is-visible .feature-card::before {
+      animation: sweepGlare 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       animation-delay: 0.2s;
     }
-
-    /* Protected 9:16 Preferential Dimension Framework */
-    .evidence-frame-wrapper {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      background-color: var(--color-ash-gray);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: var(--spacing-16);
-      border: 1px solid var(--color-cool-gray);
-    }
-
-    .evidence-frame-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Assures screenshot assets undergo absolutely zero manipulation or warping */
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .evidence-frame-wrapper:hover img {
-      transform: scale(1.02);
-    }
-
-    .zoom-badge {
-      position: absolute;
-      bottom: var(--spacing-12);
-      right: var(--spacing-12);
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid var(--color-steel-gray);
-      padding: var(--spacing-4) var(--spacing-12);
-      border-radius: var(--radius-full);
-      font-size: var(--text-caption);
-      color: var(--color-dark-charcoal);
-      font-weight: 500;
-      pointer-events: none;
-    }
-
-    .card-meta-title {
-      font-family: var(--font-af);
-      font-size: var(--text-subheading);
-      color: var(--color-charcoal);
-      font-weight: 600;
-      margin-bottom: var(--spacing-12);
-    }
-
-    .analysis-points {
-      list-style-type: none;
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-8);
-    }
-
-    .analysis-points li {
-      position: relative;
-      padding-left: var(--spacing-16);
-      font-size: var(--text-caption);
-      color: var(--color-medium-gray);
-      line-height: var(--leading-caption);
-    }
-
-    .analysis-points li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: var(--color-action-azure);
-    }
-
-    /* High-Emphasis Brand Colored Container Section Component */
-    .brand-featured-card {
-      background: var(--color-cofounder-blue);
-      border-radius: var(--radius-3xl);
-      color: var(--color-canvas-white);
-      padding: var(--spacing-48) var(--spacing-32);
-      box-shadow: var(--shadow-subtle-3);
-      margin-top: var(--spacing-40);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .brand-featured-card h3 {
-      font-family: var(--font-ppmondwest);
-      font-size: var(--text-heading);
-      margin-bottom: var(--spacing-16);
-    }
-
-    .featured-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--spacing-24);
-    }
-
-    .featured-col {
-      font-size: var(--text-caption);
-      line-height: var(--leading-caption);
-      opacity: 0.9;
-    }
-
-    /* Structured Log-Timeline Module Component */
-    .timeline-container {
-      max-width: 700px;
-      margin: var(--spacing-32) 0;
-      position: relative;
-    }
-
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      left: 8px;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background-color: var(--color-steel-gray);
-    }
-
-    .timeline-event {
-      position: relative;
-      padding-left: var(--spacing-32);
-      margin-bottom: var(--spacing-32);
-    }
-
-    .timeline-event:last-child {
-      margin-bottom: 0;
-    }
-
-    .timeline-node-dot {
-      position: absolute;
-      left: 4px;
-      top: 6px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background-color: var(--color-action-azure);
-      border: 2px solid var(--color-canvas-white);
-    }
-
-    .timeline-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--color-pitch-black);
-      margin-bottom: var(--spacing-4);
-    }
-
-    .timeline-desc {
-      font-size: var(--text-caption);
-      color: var(--color-medium-gray);
-      line-height: var(--leading-caption);
-    }
-
-    /* Minimal Elegant Statement Frame */
-    .ethical-banner {
-      background: var(--color-ash-gray);
-      border: 1px solid var(--color-cool-gray);
-      border-radius: var(--radius-xl);
-      padding: var(--spacing-40) var(--spacing-24);
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .ethical-banner p {
-      font-size: var(--text-subheading);
-      color: var(--color-charcoal);
-      line-height: var(--leading-subheading);
-      max-width: 600px;
-      margin: 0 auto var(--spacing-24) auto;
-    }
-
-    .quote-style {
-      font-family: var(--font-ppmondwest);
-      font-size: var(--text-heading);
-      color: var(--color-cofounder-blue);
-      font-style: italic;
-    }
-
-    /* Architectonic Modern Flat Footer Layer */
-    footer {
-      background-color: var(--color-ash-gray);
-      border-top: 1px solid var(--color-steel-gray);
-      padding: var(--spacing-48) 0;
-      text-align: center;
-    }
-
-    footer p {
-      font-family: var(--font-ppmondwest);
-      font-size: var(--text-subheading);
-      color: var(--color-pitch-black);
-      margin-bottom: var(--spacing-8);
-    }
-
-    footer span {
-      font-size: var(--text-caption);
-      color: var(--color-medium-gray);
-    }
-
-    /* Flat High-Contrast Lightbox Layer Component */
-    .lightbox-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(31, 31, 41, 0.98);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-      padding: var(--spacing-24);
-    }
-
-    .lightbox-overlay.active {
-      display: flex;
-    }
-
-    .lightbox-img {
-      max-width: 95%;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: var(--radius-md);
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: var(--spacing-24);
-      right: var(--spacing-24);
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-full);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: var(--color-canvas-white);
-    }
-
-    /* Core Micro-Animation Frame Parameters */
-    @keyframes glareSweep {
+    @keyframes sweepGlare {
       0% { left: -150%; }
       100% { left: 150%; }
     }
 
-    /* Responsive Viewport Scale Adjustments */
-    @media (max-width: 768px) {
-      :root {
-        --text-display: 40px;
-        --text-heading-lg: 32px;
-        --text-heading: 28px;
-      }
-      .nav-links {
-        display: none; /* Collapses auxiliary links safely inside standard modern dynamic viewports */
-      }
-      .brand-featured-card {
-        padding: var(--spacing-24) var(--spacing-16);
-      }
-      .featured-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-16);
-      }
+    /* Enforced 9:16 Aspect Media Wrapper */
+    .media-frame {
+      width: 100%; aspect-ratio: 9 / 16;
+      background: var(--color-light-graphite);
+      border-radius: var(--radius-images); margin-bottom: var(--spacing-24);
+      overflow: hidden; display: flex; align-items: center; justify-content: center;
+      position: relative; cursor: pointer;
+    }
+    .media-frame img {
+      width: 100%; height: 100%; object-fit: contain; /* Never crop or stretch */
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .media-frame:hover img { transform: scale(1.04); }
+    
+    /* Playful Accent Tags */
+    .tag {
+      position: absolute; bottom: 12px; right: 12px;
+      background: var(--color-vivacious-pink); color: var(--color-cloud-white);
+      padding: 6px 14px; border-radius: var(--radius-tags);
+      font-size: var(--text-caption); font-weight: 700;
+      font-family: var(--font-arial); pointer-events: none;
+    }
+
+    .card-title {
+      font-size: var(--text-heading-sm); font-weight: 700;
+      margin-bottom: var(--spacing-16); letter-spacing: var(--tracking-tight);
+      line-height: 1.23;
+    }
+    .card-points {
+      list-style: none; display: flex; flex-direction: column; gap: var(--spacing-10);
+      flex-grow: 1;
+    }
+    .card-points li {
+      font-size: var(--text-body); color: var(--color-pale-ash);
+      position: relative; padding-left: var(--spacing-20);
+    }
+    .card-points li::before {
+      content: "✦"; position: absolute; left: 0; top: 1px;
+      color: var(--color-vivacious-pink); font-size: 14px;
+    }
+
+    /* --- Timeline (Playful Layout) --- */
+    .timeline-container { max-width: 800px; margin: 0 auto; }
+    .timeline-block {
+      background: var(--color-cloud-white);
+      border: 1px solid var(--color-pale-ash);
+      border-radius: var(--radius-cards);
+      padding: var(--spacing-36); margin-bottom: var(--spacing-24);
+      position: relative;
+    }
+    .timeline-block:last-child { margin-bottom: 0; }
+    .timeline-step {
+      font-family: var(--font-arial); font-size: 13px; font-weight: 700;
+      color: var(--color-vivacious-pink); text-transform: uppercase;
+      margin-bottom: var(--spacing-8); display: block;
+    }
+    .timeline-title {
+      font-size: var(--text-subheading); font-weight: 900;
+      color: var(--color-coal-text); margin-bottom: var(--spacing-12);
+    }
+    .timeline-desc { font-size: var(--text-body); color: var(--color-slate-gray); }
+
+    /* --- Respect Statement Banner --- */
+    .ethical-banner {
+      background: var(--color-deep-graphite);
+      border-radius: var(--radius-cards); padding: var(--spacing-60);
+      text-align: center; color: var(--color-cloud-white);
+      box-shadow: var(--shadow-xl); max-width: 1000px; margin: 0 auto;
+    }
+    .ethical-banner h3 {
+      font-size: var(--text-heading-sm); font-weight: 900;
+      margin-bottom: var(--spacing-20); color: var(--color-vivacious-pink);
+    }
+    .ethical-banner p {
+      font-size: var(--text-subheading); font-weight: 500;
+      max-width: 700px; margin: 0 auto;
+    }
+
+    /* --- Minimal Footer --- */
+    footer {
+      background: var(--color-frost-canvas);
+      padding: var(--spacing-60) 0; text-align: center;
+      border-top: 1px solid var(--color-pale-ash);
+    }
+    footer h4 { font-size: var(--text-subheading); font-weight: 900; color: var(--color-midnight-ink); margin-bottom: var(--spacing-8); }
+    footer p { font-size: 14px; color: var(--color-slate-gray); font-family: var(--font-arial); }
+
+    /* --- Smooth Playful Lightbox --- */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+      padding: var(--spacing-24);
+    }
+    .lightbox.active { opacity: 1; pointer-events: auto; }
+    .lightbox img {
+      max-width: 100%; max-height: 90vh; object-fit: contain;
+      border-radius: var(--radius-images);
+      transform: scale(0.9); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .lightbox.active img { transform: scale(1); }
+    
+    .lightbox-close {
+      position: absolute; top: var(--spacing-24); right: var(--spacing-24);
+      width: 50px; height: 50px; border-radius: var(--radius-buttons);
+      background: var(--color-cloud-white); color: var(--color-vivacious-pink);
+      border: none; font-size: 24px; font-weight: bold; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.2s, background 0.2s; box-shadow: var(--shadow-xl);
+    }
+    .lightbox-close:hover { transform: scale(1.1); background: var(--color-frost-canvas); }
+
+    /* --- Mobile Refinements --- */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      :root { --section-gap: 80px; }
+      .feature-card { padding: 24px; border-radius: 32px; }
+      .ethical-banner { padding: 40px 24px; border-radius: 32px; }
+      .timeline-block { padding: 24px; border-radius: 24px; }
     }
   </style>
 </head>
@@ -644,135 +340,111 @@
 
   <header>
     <div class="container navbar">
-      <a href="#" class="brand">General Intelligence Co.</a>
+      <a href="#" class="brand">Truth About Savir</a>
       <ul class="nav-links">
-        <li><a href="#evidence-audit">Audit Suite</a></li>
-        <li><a href="#event-timeline">Timeline Log</a></li>
-        <li><a href="#integrity-charter" class="blurred-nav-btn">Read Statement</a></li>
+        <li><a href="#analysis">Forensic Data</a></li>
+        <li><a href="#timeline">Timeline Logs</a></li>
+        <li><a href="#ethics" class="btn-ghost">Review Values</a></li>
       </ul>
     </div>
   </header>
 
   <main>
-    
-    <section class="parallax-viewport">
-      <div class="parallax-bg" id="parallaxBg"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">Savir Is Innocent</h1>
-        <p class="hero-subtitle">Anonymous screenshots were spread online without proper verification. Forensic evidence analysis raises serious doubts about their authenticity.</p>
-        <a href="#evidence-audit" class="btn-solid-dark">Analyze Evidence Log</a>
-        
-        <div class="hero-overlay-card">
-          <p>This technical index operates strictly to map design artifacts, resolution variances, and inconsistent viewport components across unverified media files.</p>
-        </div>
+    <section class="hero-section">
+      <div class="parallax-bg" id="hero-bg"></div>
+      <div class="container hero-content">
+        <h1 class="hero-title">Savir Is Innocent.</h1>
+        <p class="hero-subtitle">Anonymous claims spread rapidly online without verification. Advanced forensic evidence analysis reveals the truth behind manipulated screenshots.</p>
+        <a href="#analysis" class="btn-primary">Examine the Evidence</a>
       </div>
     </section>
 
-    <section class="section-block container" id="evidence-audit">
-      <div class="section-header">
-        <h2 class="section-title">Technical Audit & Inconsistencies</h2>
+    <section id="analysis" class="section-padding container">
+      <div class="section-header reveal-item">
+        <h2 class="section-title">Evidence Analysis</h2>
       </div>
 
-      <div class="evidence-grid">
+      <div class="grid-container">
         
-        <div class="reveal-card" id="card1">
-          <div class="elevated-content-card">
-            <div class="glare-overlay"></div>
-            <div class="evidence-frame-wrapper" onclick="triggerLightbox('image1.jpeg')">
-              <img src="image1.jpeg" alt="Forensic Viewport Screenshot Artifact 1">
-              <div class="zoom-badge">Inspect Axis</div>
+        <div class="reveal-item">
+          <div class="feature-card">
+            <div class="media-frame" onclick="openLightbox('image1.jpeg')">
+              <img src="image1.jpeg" alt="Screenshot anomaly 1" onerror="this.style.opacity='0'">
+              <span class="tag">Inspect</span>
             </div>
-            <h3 class="card-meta-title">Image 1 Verification</h3>
-            <ul class="analysis-points">
-              <li>The screenshot claims to represent an iOS environment.</li>
-              <li>A visible mouse cursor appears inside the screenshot, which is inconsistent with normal iPhone screenshots.</li>
-              <li>Windows Snipping Tool does not automatically insert mouse cursors into screenshots.</li>
-              <li>Cursor placement and visible glitches strongly suggest manipulation or compositing.</li>
-              <li>The image quality is unusually poor for a modern iOS screenshot.</li>
+            <h3 class="card-title">Image 1 Analysis</h3>
+            <ul class="card-points">
+              <li>Claims to represent an iOS environment natively.</li>
+              <li>Visible mouse cursor appears inside the frame—impossible on native iPhone captures.</li>
+              <li>Standard snipping tools do not inject cursors; implies external compositing.</li>
+              <li>Pixel quality is unusually poor for standard modern mobile devices.</li>
             </ul>
           </div>
         </div>
 
-        <div class="reveal-card" id="card2">
-          <div class="elevated-content-card">
-            <div class="glare-overlay"></div>
-            <div class="evidence-frame-wrapper" onclick="triggerLightbox('image 2.jpeg')">
-              <img src="image 2.jpeg" alt="Forensic Viewport Screenshot Artifact 2">
-              <div class="zoom-badge">Inspect Axis</div>
+        <div class="reveal-item">
+          <div class="feature-card">
+            <div class="media-frame" onclick="openLightbox('image 2.jpeg')">
+              <img src="image 2.jpeg" alt="Screenshot anomaly 2" onerror="this.style.opacity='0'">
+              <span class="tag">Inspect</span>
             </div>
-            <h3 class="card-meta-title">Image 2 Verification</h3>
-            <ul class="analysis-points">
-              <li>AI structural validation tools registered multiple localized editing layers.</li>
-              <li>Compression metrics show unnatural degradation spikes along key character text values.</li>
-              <li>Attribution remains entirely anonymous with zero cryptographically verifiable context.</li>
+            <h3 class="card-title">Image 2 Analysis</h3>
+            <ul class="card-points">
+              <li>Machine analysis actively flagged the asset as digitally altered.</li>
+              <li>Heavy compression artifacts specifically target timeline/text data to mask edits.</li>
+              <li>Utter lack of cryptographic metadata tracing to an original unedited source.</li>
             </ul>
           </div>
         </div>
 
-        <div class="reveal-card" id="card3">
-          <div class="elevated-content-card">
-            <div class="glare-overlay"></div>
-            <div class="evidence-frame-wrapper" onclick="triggerLightbox('image 3.jpeg')">
-              <img src="image 3.jpeg" alt="Forensic Viewport Screenshot Artifact 3">
-              <div class="zoom-badge">Inspect Axis</div>
+        <div class="reveal-item">
+          <div class="feature-card">
+            <div class="media-frame" onclick="openLightbox('image 3.jpeg')">
+              <img src="image 3.jpeg" alt="Screenshot anomaly 3" onerror="this.style.opacity='0'">
+              <span class="tag">Inspect</span>
             </div>
-            <h3 class="card-meta-title">Image 3 Verification</h3>
-            <ul class="analysis-points">
-              <li>High-amplitude distortion indicates deliberate quality lowering to obscure artifact paths.</li>
-              <li>Sub-pixel anomalies flag potential canvas stitching or timestamp replacement layers.</li>
+            <h3 class="card-title">Image 3 Analysis</h3>
+            <ul class="card-points">
+              <li>Severe quality degradation obscures standard viewport rendering parameters.</li>
+              <li>Font rendering and padding rules conflict with native application builds.</li>
+              <li>Identified as a highly likely synthetic canvas rather than a direct screen record.</li>
             </ul>
           </div>
         </div>
 
-      </div>
-
-      <div class="brand-featured-card">
-        <h3>General Verification Parameters</h3>
-        <div class="featured-grid">
-          <div class="featured-col">
-            <strong>Resolution Audit</strong><br>
-            Standard operating device units create crisp high-fidelity imagery metrics. Artificially low resolution renders signal an attempt to camouflage manual pixel shifting.
-          </div>
-          <div class="featured-col">
-            <strong>Cursor Anomalies</strong><br>
-            Native structural mobile captures never contain hardware mouse layouts natively unless injected via secondary compositing software environments.
-          </div>
-          <div class="featured-col">
-            <strong>Ethical Assessment</strong><br>
-            Unsigned public evidence parameters lacking source verification chains cannot confidently be categorized as historical objective fact.
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="section-block container" id="event-timeline">
-      <div class="section-header">
-        <h2 class="section-title">Timeline of Verification Events</h2>
+    <section id="timeline" class="section-padding container">
+      <div class="section-header reveal-item">
+        <h2 class="section-title">Sequence of Events</h2>
       </div>
       
       <div class="timeline-container">
-        <div class="timeline-event">
-          <div class="timeline-node-dot"></div>
-          <div class="timeline-title">Initial File Manifestation</div>
-          <div class="timeline-desc">Anonymous structural capture packages are deployed directly into online spaces with no source parameters attached.</div>
+        <div class="timeline-block reveal-item">
+          <span class="timeline-step">Phase 01</span>
+          <h4 class="timeline-title">Anonymous Distribution</h4>
+          <p class="timeline-desc">Digital assets were uploaded and distributed across platforms completely devoid of source verification or signed metadata.</p>
         </div>
-        <div class="timeline-event">
-          <div class="timeline-node-dot"></div>
-          <div class="timeline-title">Amplification Phase</div>
-          <div class="timeline-desc">The digital materials are rapidly mirrored without basic pixel processing verification steps.</div>
+        
+        <div class="timeline-block reveal-item">
+          <span class="timeline-step">Phase 02</span>
+          <h4 class="timeline-title">Unverified Spread</h4>
+          <p class="timeline-desc">Accusations rapidly gained traction in community spaces prior to any technical authentication of the materials.</p>
         </div>
-        <div class="timeline-event">
-          <div class="timeline-node-dot"></div>
-          <div class="timeline-title">Technical Forensic Discovery</div>
-          <div class="timeline-desc">Detailed alignment evaluations reveal desktop cursor overlays, sub-pixel shifting paths, and mismatched operating system vectors.</div>
+        
+        <div class="timeline-block reveal-item">
+          <span class="timeline-step">Phase 03</span>
+          <h4 class="timeline-title">Forensic Audit</h4>
+          <p class="timeline-desc">Detailed pixel and structural investigations highlighted explicit proof of desktop cursors, compression hiding, and manipulated alignment layers.</p>
         </div>
       </div>
     </section>
 
-    <section class="section-block container" id="integrity-charter">
-      <div class="ethical-banner">
-        <p>No individual should face public targeting or immediate condemnation based on anonymous, uncorroborated media packages. We support critical assessment protocols across community layers.</p>
-        <span class="quote-style">“Objective verification overrides public rumor frameworks.”</span>
+    <section id="ethics" class="section-padding container" style="padding-bottom: 113px;">
+      <div class="ethical-banner reveal-item">
+        <h3>Facts Over Fiction</h3>
+        <p>Nobody should be targeted, harassed, or labeled guilty without verified proof. We encourage critical thinking, fairness, and systematic verification in all digital interactions.</p>
       </div>
     </section>
 
@@ -780,78 +452,60 @@
 
   <footer>
     <div class="container">
-      <p>Analyze parameters carefully before accepting public claims.</p>
-      <span>Built in compliance with the General Intelligence structural design guidelines. Data representations map verified pixel inconsistencies exclusively.</span>
+      <h4>Seek Facts Before Reacting</h4>
+      <p>This layout operates under the "Playful" aesthetic system. Data representation maps strictly to verifiable pixel anomalies.</p>
     </div>
   </footer>
 
-  <div id="inspectorLightbox" class="lightbox-overlay" onclick="closeLightbox()">
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <img id="lightboxImgTarget" class="lightbox-img" src="" alt="Analytical Panel Presentation Extended Layout">
+    <img id="lightbox-img" src="" alt="Expanded Forensic View">
   </div>
 
   <script>
-    // Perform Dynamic Parallax Scaling & Translation Tasks Safely across PC/Mobile layouts
-    window.addEventListener('scroll', function() {
-      const scrolledDistance = window.pageYOffset;
-      const parallaxBgElement = document.getElementById('parallaxBg');
-      
-      // RequestAnimationFrame optimizes browser rendering loops to skip stuttering
-      window.requestAnimationFrame(function() {
-        if (parallaxBgElement) {
-          // Adjust depth coefficients safely without shifting text layers out of container bounds
-          parallaxBgElement.style.transform = 'translateY(' + (scrolledDistance * 0.4) + 'px)';
+    // 1. Hardware-Accelerated Parallax Engine
+    // Utilizing CSS Custom Properties to prevent reflow stutter on mobile and PC
+    window.addEventListener('scroll', () => {
+      document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+    }, { passive: true });
+
+    // 2. Intersection Observer (Scroll Reveal + Glare Activation)
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); // Trigger only once for performance
         }
       });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -50px 0px', // Triggers slightly before entering fully
+      threshold: 0.1
     });
 
-    // Intersection Observer Configuration maps scroll visibility criteria to trigger Reveal cards + Glare
-    document.addEventListener('DOMContentLoaded', function() {
-      const observationCards = document.querySelectorAll('.reveal-card');
-      
-      const observerSettings = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px' // Permits premature loading paths to seamless view conversion
-      };
-
-      const scrollVisibilityObserver = new IntersectionObserver(function(monitoredEntries, contentObserver) {
-        monitoredEntries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            // Stop watching element once triggered to maintain persistent page performance loops
-            contentObserver.unobserve(entry.target);
-          }
-        });
-      }, observerSettings);
-
-      observationCards.forEach(function(targetCard) {
-        scrollVisibilityObserver.observe(targetCard);
-      });
+    document.querySelectorAll('.reveal-item').forEach(el => {
+      revealObserver.observe(el);
     });
 
-    // Pure Layout Image Lightbox Functional Controls
-    function triggerLightbox(imageSourcePath) {
-      const activeLightboxOverlay = document.getElementById('inspectorLightbox');
-      const targetRenderWindow = document.getElementById('lightboxImgTarget');
-      
-      targetRenderWindow.src = imageSourcePath;
-      activeLightboxOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Immobilize base view layer overflow tracking
+    // 3. Playful Lightbox Logic
+    const lbox = document.getElementById('lightbox');
+    const lboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(src) {
+      lboxImg.src = src;
+      lbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Lock background scrolling
     }
-
+    
     function closeLightbox() {
-      const activeLightboxOverlay = document.getElementById('inspectorLightbox');
-      activeLightboxOverlay.classList.remove('active');
-      document.body.style.overflow = ''; // Reinstate system scroll capabilities safely
+      lbox.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { lboxImg.src = ''; }, 300); // Clear image after transition
     }
-
-    // Monitor environment keyboard controls for rapid dismiss operations
-    document.addEventListener('keydown', function(pressedKey) {
-      if (pressedKey.key === 'Escape') {
-        closeLightbox();
-      }
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
     });
   </script>
-
 </body>
 </html>
